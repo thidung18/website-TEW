@@ -214,7 +214,47 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ==========================================================================
-       7. BLOG ARTICLE CATEGORY FILTERING
+       7. PRODUCT PAGE BLOG / COLLECTION FILTERING
+       ========================================================================== */
+    const productBlogFilters = document.querySelectorAll("[data-blog-filter]");
+    const productBlogCards = document.querySelectorAll("[data-blog-grid] [data-blog-category]");
+
+    if (productBlogFilters.length > 0 && productBlogCards.length > 0) {
+        productBlogFilters.forEach((filter) => {
+            filter.addEventListener("click", () => {
+                const selectedCategory = filter.dataset.blogFilter;
+
+                productBlogCards.forEach((card) => {
+                    const isMatch = card.dataset.blogCategory === selectedCategory;
+                    card.classList.toggle("d-none", !isMatch);
+                    card.classList.remove("tew-active");
+                    if (isMatch) {
+                        setTimeout(() => card.classList.add("tew-active"), 50);
+                    }
+                });
+
+                productBlogFilters.forEach((button) => {
+                    const isActive = button === filter;
+                    button.setAttribute("aria-pressed", String(isActive));
+                    button.classList.toggle("text-brand-purple", isActive);
+                    button.classList.toggle("fw-medium", isActive);
+                    button.classList.toggle("text-secondary", !isActive);
+                    button.classList.toggle("pb-2", !isActive);
+                    button.classList.toggle("d-flex", isActive);
+                    button.classList.toggle("flex-column", isActive);
+                    button.classList.toggle("align-items-center", isActive);
+
+                    const accent = button.querySelector(".common-section-accent");
+                    if (accent) {
+                        accent.classList.toggle("d-none", !isActive);
+                    }
+                });
+            });
+        });
+    }
+
+    /* ==========================================================================
+       8. BLOG ARTICLE CATEGORY FILTERING
        ========================================================================== */
     const blogFilters = document.querySelectorAll("[data-blog-category-filter]");
     const blogArticles = document.querySelectorAll("[data-blog-category-item]");
@@ -262,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ==========================================================================
-       8. URL SEARCH PARAMS HANDLER
+       9. URL SEARCH PARAMS HANDLER
        ========================================================================== */
     const searchParams = new URLSearchParams(window.location.search);
     const brandParam = searchParams.get("brand");
@@ -279,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ==========================================================================
-       9. PRODUCT DETAIL SIZE AND DIAL COLOR OPTIONS
+       10. PRODUCT DETAIL SIZE AND DIAL COLOR OPTIONS
        ========================================================================== */
     const mainWatchImage = document.querySelector(".main-watch-image");
     const dialColorSpecification = document.getElementById("dialColorSpecification");

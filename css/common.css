@@ -693,6 +693,11 @@ footer .serif-font {
     object-fit: contain;
 }
 
+.page-product [data-blog-grid] [data-blog-category="new-arrivals"] .common-watch-image,
+.page-product [data-blog-grid] [data-blog-category="bestseller"] .common-watch-image {
+    max-height: 260px;
+}
+
 /* Utility Layout Modifiers */
 .common-layout-height-80 { height: 80px !important; min-height: 80px !important; }
 .common-logo-small { height: 76px !important; width: 76px !important; object-fit: contain !important; }
