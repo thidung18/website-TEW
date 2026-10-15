@@ -1,0 +1,804 @@
+/* ==========================================================================
+   1. CẤU HÌNH BIẾN TOÀN CỤC (GLOBAL VARIABLES) - Dùng chung cho toàn website
+   ========================================================================== */
+:root {
+    /* Bảng màu chuẩn từ Home */
+    --bg-brand: #0c0d0e;
+    --bg-dark: #121413;
+    
+    --header-brand: #003D2D;
+    --footer-brand: #003D2D;
+    
+    --brand-green: #2B9B7E;
+    --brand-green-dark: #023324;
+    --emerald-btn: #003D2D;
+    --emerald-btn-hover: #002b20;
+    --accent-green: #00a870;
+    
+    --card-brand: #16181b;
+    --card-border: #23272d;
+    --card-bg-alt: #191b1f;
+    
+    --text-light: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --subtext-brand: #8a929a;
+    --purple-text: #9236C7;
+    
+    --divider-color: rgba(43, 155, 126, 0.4);
+    --border-light: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   2. CÁC THIẾT LẬP CƠ BẢN (BASE STYLES) - Font chữ & Reset
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-brand);
+    color: var(--text-light);
+    line-height: 1.6;
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: var(--emerald-btn);
+    color: #ffffff;
+}
+
+.page-about .text-muted,
+.page-about .text-secondary {
+    color: #6c757d !important;
+}
+
+.page-about {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
+}
+
+.page-about .section-title {
+    color: var(--brand-green);
+    font-family: 'Spectral', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.page-about .section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--divider-color);
+}
+
+.page-about .content-text,
+.page-about .collection-caption {
+    color: #6c757d;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.page-about .content-text {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.page-about .collection-caption {
+    text-align: center;
+}
+
+.page-about .collection-caption strong {
+    color: var(--text-light);
+}
+
+.page-about .hero-subtitle-small {
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-about .hero-title,
+.page-about .hero-tagline {
+    color: #ffffff;
+    font-family: 'Spectral', serif;
+}
+
+.page-about .hero-tagline {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-about .hero-description {
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    max-width: 600px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+/* Kiểu chữ Serif chuẩn cho Tiêu đề trên tất cả các trang */
+h1, h2, h3, h5, h6,
+.serif-font,
+.product-section-title {
+    font-family: 'Spectral', 'Playfair Display', serif;
+    margin-top: 0;
+}
+
+h5, h6 {
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+}
+
+.serif-font {
+    font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   3. MÀU SẮC & LỚP TIỆN ÍCH CHUNG (UTILITY CLASSES)
+   ========================================================================== */
+.text-brand-green,
+.common-brand-text,
+.common-brand-heading-normal {
+    color: var(--brand-green) !important;
+}
+
+.text-brand-purple,
+.common-brand-purple-text {
+    color: var(--purple-text) !important;
+}
+
+.bg-brand-card {
+    background-color: var(--card-brand) !important;
+    border-color: var(--card-border) !important;
+}
+
+.section-divider,
+.title-line {
+    height: 1px;
+    max-width: 600px;
+    flex: 1;
+    background-color: var(--divider-color);
+    margin: 2rem 0;
+}
+
+/* Xử lý ảnh lỗi / chưa load */
+img:not([src]),
+img[src=""] {
+    background-color: #1a1d22;
+    border: 1px dashed #2d323b;
+    position: relative;
+}
+
+img:not([src])::before,
+img[src=""]::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: #1a1d22 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%3A4b5563' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3Cpolyline points='21 15 16 10 5 21'/%3E%3C/svg%3E") no-repeat center;
+    opacity: 0.4;
+}
+
+/* ==========================================================================
+   4. ĐẦU TRANG ĐỒNG BỘ (HEADER & NAVBAR)
+   ========================================================================== */
+.bg-brand-header {
+    background-color: var(--header-brand) !important;
+}
+
+.navbar-brand img {
+    max-height: 45px;
+    object-fit: contain;
+}
+
+.nav-link-custom {
+    color: #d1d5db;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    color: var(--brand-green) !important;
+}
+
+.nav-icons a,
+.header-icon-btn {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    background: transparent;
+    border: none;
+    transition: color 0.2s ease;
+    padding: 0.25rem;
+}
+
+.nav-icons a:hover,
+.header-icon-btn:hover {
+    color: var(--brand-green);
+}
+
+/* ==========================================================================
+   5. CHÂN TRANG ĐỒNG BỘ (FOOTER)
+   ========================================================================== */
+.bg-brand-footer,
+.footer-section {
+    background-color: var(--footer-brand) !important;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-top: 60px;
+    border-top: 1px solid var(--brand-green);
+}
+
+footer h1,
+footer h2,
+footer h3,
+footer h5,
+footer h6,
+footer .serif-font {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.footer-logo-img {
+    max-height: 45px;
+    object-fit: contain;
+}
+
+.footer-header {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.footer-info {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-info p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: 12px;
+}
+
+.footer-bottom-line {
+    border-top: 1px solid var(--border-light);
+    margin-top: 40px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-gallery-img {
+    height: 80px;
+    width: 64px;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+    .border-start-md {
+        border-left: 1px solid var(--border-light) !important;
+    }
+}
+
+/* ==========================================================================
+   6. THÀNH PHẦN NÚT BẤM (BUTTONS) - Chuẩn Style Home
+   ========================================================================== */
+.btn-emerald,
+.btn-buy-now {
+    background-color: var(--emerald-btn);
+    color: #ffffff;
+    border: 1px solid var(--brand-green);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.75rem 1.75rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-emerald:hover,
+.btn-buy-now:hover {
+    background-color: var(--emerald-btn-hover);
+    color: #ffffff;
+    border-color: var(--brand-green);
+}
+
+.btn-outline-custom {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 300;
+    padding: 0.75rem 1.75rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-outline-custom:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ==========================================================================
+   7. THÀNH PHẦN TRANG SẢN PHẨM & CHI TIẾT (PRODUCTS & DETAILS)
+   ========================================================================== */
+.product-card {
+    background-color: var(--card-brand);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.product-img-wrapper {
+    width: 100%;
+    height: 176px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #101215;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+@media (min-width: 576px) {
+    .product-img-wrapper {
+        height: 208px;
+    }
+}
+
+.product-img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    padding: 0;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    color: #ffffff;
+}
+
+.filter-btn.active {
+    color: var(--purple-text);
+    font-weight: 500;
+    border-bottom: 2px solid var(--purple-text);
+    padding-bottom: 0.75rem;
+    margin-bottom: -0.875rem;
+}
+
+.img-card {
+    background-color: var(--card-bg-alt);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.img-card-large {
+    aspect-ratio: 1 / 1;
+}
+
+.img-card-large img {
+    max-width: 100%;
+    max-height: 340px;
+    object-fit: contain;
+}
+
+.page-product-detail .main-watch-image {
+    max-height: 520px;
+}
+
+.page-product-detail .product-feature-image-card {
+    aspect-ratio: auto;
+}
+
+.page-product-detail .product-feature-image-card img {
+    width: 100%;
+    max-height: none;
+}
+
+.page-product-detail .product-detail-gallery-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.img-card-small {
+    aspect-ratio: 1 / 1;
+    padding: 1rem;
+}
+
+.img-card-small img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.product-section-title {
+    color: var(--brand-green) !important;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1rem;
+}
+
+.product-desc {
+    color: var(--subtext-brand);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.bg-brand-header {
+    background-color: #023825 !important;
+}
+
+.btn-emerald {
+    background-color: #045237 !important;
+    border-color: #045237 !important;
+    color: #ffffff !important;
+}
+
+.btn-emerald:hover {
+    background-color: #023825 !important;
+}
+
+.max-w-85 {
+    max-width: 85%;
+}
+
+.extra-small {
+    font-size: 0.725rem;
+}
+
+.tew-chatbot-toggle {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 1030;
+    width: 60px;
+    height: 60px;
+}
+
+.tew-chatbot-window {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 1031;
+    width: 380px;
+    height: min(580px, calc(100vh - 3rem));
+    max-width: calc(100vw - 1rem);
+    background-color: #121212;
+    font-size: 0.875rem;
+}
+
+.tew-chatbot-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.tew-chatbot-avatar {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.tew-chatbot-title {
+    font-size: 0.95rem;
+}
+
+.tew-chatbot-send {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+    .tew-chatbot-toggle,
+    .tew-chatbot-window {
+        right: 0.75rem;
+        bottom: 0.75rem;
+    }
+}
+
+/* ==========================================================================
+   8. HERO SECTION & CÁC LỚP TIỆN ÍCH DÙNG CHUNG KHÁC
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 450px;
+    background-color: #2a2a2a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.page-about .hero-section {
+    height: clamp(450px, 45.14vw, 650px);
+}
+
+.page-product .hero-section {
+    height: clamp(450px, 45.14vw, 650px);
+}
+
+.hero-cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.page-product .hero-cover {
+    filter: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 30%, rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-about .hero-content {
+    transform: translateY(clamp(-48px, calc(48px - 6.67vw), 0px));
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.page-about .hero-title {
+    font-size: calc(1.475rem + 2.7vw);
+}
+
+@media (min-width: 1200px) {
+    .page-about .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+.page-home #home {
+    min-height: 650px;
+}
+
+.page-home #home > div:first-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-home .common-eyebrow-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}
+
+.page-home .common-reference-text {
+    font-size: 10px !important;
+}
+
+.common-watch-frame {
+    height: 260px;
+    overflow: visible;
+}
+
+.common-watch-image {
+    width: auto;
+    max-width: 100%;
+    max-height: 400px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Utility Layout Modifiers */
+.common-layout-height-80 { height: 80px !important; min-height: 80px !important; }
+.common-logo-small { height: 76px !important; width: 76px !important; object-fit: contain !important; }
+.common-logo-footer { height: 110px !important; width: 110px !important; object-fit: contain !important; }
+.common-feedback-header-banner { width: 100%; max-width: none; height: 650px; margin-inline: 0; }
+.common-feedback-header-content { transform: translateY(clamp(-100px, calc(100px - 13.89vw), 0px)); }
+.common-feedback-banner { width: 100%; max-width: 1440px; height: 553px; margin-inline: auto; }
+.page-blog .blog-hero-banner {
+    width: 100%;
+    max-width: none;
+    height: clamp(420px, 55vw, 650px);
+    display: flex;
+    align-items: center;
+}
+.page-blog .blog-hero-copy {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    padding: clamp(1rem, 3vw, 2rem);
+    text-align: left;
+    transform: translateX(calc(clamp(0px, calc(45vw - 450px), 360px) + 30px));
+}
+.page-blog .blog-hero-copy h1 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    line-height: 1.15;
+}
+@media (max-width: 767.98px) {
+    .page-home #home .common-content-width-580,
+    .page-about .hero-content,
+    .page-feedback .common-feedback-header-content,
+    .page-blog .blog-hero-copy {
+        background: rgba(0, 0, 0, 0.58);
+        border-radius: 0.25rem;
+    }
+
+    .page-home #home .common-content-width-580,
+    .page-about .hero-content,
+    .page-feedback .common-feedback-header-content {
+        padding: 1rem;
+    }
+
+    .page-blog .blog-hero-banner {
+        height: clamp(360px, 75vh, 520px);
+    }
+
+    .page-blog .blog-hero-copy {
+        transform: none;
+    }
+
+    .page-blog .blog-hero-banner img {
+        object-position: 35% center;
+    }
+}
+.login-card { width: 100%; max-width: 642px; height: 600px; margin-inline: auto; display: flex; flex-direction: column; justify-content: center; }
+.signup-card { width: 100%; max-width: 642px; height: 668px; margin-inline: auto; display: flex; flex-direction: column; justify-content: center; }
+.feedback-rating { display: flex; flex-direction: row-reverse; justify-content: center; gap: 0.75rem; font-size: 1.75rem; }
+.feedback-rating-input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+.feedback-rating-label { color: #6c757d; cursor: pointer; transition: color 0.15s ease-in-out; }
+.feedback-rating-label:hover,
+.feedback-rating-label:hover ~ .feedback-rating-label,
+.feedback-rating-input:checked + .feedback-rating-label,
+.feedback-rating-input:checked ~ .feedback-rating-label { color: #ffc107; }
+.feedback-rating-input:focus-visible + .feedback-rating-label { outline: 2px solid #fff; outline-offset: 4px; }
+.common-footer-gallery-grid {
+    grid-template-columns: repeat(2, 48px);
+    width: fit-content;
+}
+.common-gallery-preview {
+    width: 48px !important;
+    height: 60px !important;
+    object-fit: cover;
+}
+.common-card-dark { background-color: #111316 !important; }
+.common-description-copy { font-size: 16px !important; line-height: 1.8 !important; }
+
+.page-post .post-watch-image-frame {
+    height: 320px;
+    background-color: var(--bg-brand);
+}
+
+.page-pay .form-control,
+.page-pay .input-group {
+    min-width: 0;
+}
+
+.page-pay .order-summary-list {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.page-pay .order-summary-item {
+    min-width: 0;
+}
+
+.page-pay .order-summary-item-details {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.page-pay .order-summary-item-actions {
+    flex-shrink: 0;
+}
+
+@media (min-width: 992px) {
+    .page-pay .order-summary-panel {
+        position: sticky;
+        top: 100px;
+    }
+}

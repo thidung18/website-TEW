@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TEW - Timeless Elegance Watches</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <!-- Bootstrap CSS 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Spectral for headings & Inter for Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Shared styles for all pages -->
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="page-blog text-white">
+
+   
+    <!-- 1. Header / Navbar -->
+    <header class="bg-brand-header border-bottom border-success-subtle border-opacity-10 text-white sticky-top">
+        <div class="container-xl common-layout-height-80">
+            <div class="d-flex align-items-center justify-content-between py-2 py-md-0 common-layout-height-80">
+                <!-- Hamburger Menu (Mobile) & Brand Logo -->
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-link text-white p-1 d-md-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars fs-4"></i>
+                    </button>
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="TEW logo" class="common-logo-small" />
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="d-none d-md-flex flex-grow-1 align-items-center justify-content-center gap-4 gap-lg-5">
+                    <a href="index.html" class="nav-link-custom text-white">Home</a>
+                    <a href="product.html" class="nav-link-custom">Products</a>
+                    <a href="about us.html" class="nav-link-custom">About us</a>
+                    <a href="blog.html" class="nav-link-custom">Blog</a>
+                    <a href="contact.html" class="nav-link-custom">Contact</a>
+                    <a href="feedback.html" class="nav-link-custom">Feedback</a>
+                </nav>
+
+                <!-- Action Icons Right -->
+                <div class="d-flex align-items-center gap-3 gap-md-4 text-light">
+                    <button class="btn btn-link text-white p-1" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass fs-5"></i>
+                    </button>
+                    <a href="cart.html" class="btn btn-link text-white p-1" aria-label="Cart">
+                        <i class="fa-solid fa-bag-shopping fs-5"></i>
+                    </a>
+                    <a href="sign in.html" class="btn btn-link text-white p-1" aria-label="Account">
+                        <i class="fa-solid fa-circle-user fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Offcanvas Mobile Navigation Menu -->
+    <div class="offcanvas offcanvas-start text-bg-dark bg-brand-header" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+            <h5 class="offcanvas-title serif-font text-white" id="mobileMenuLabel">TEW WATCHES</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="d-flex flex-column gap-3 fs-5">
+                <a href="index.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Home page</a>
+                <a href="product.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Products</a>
+                <a href="about us.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">About us</a>
+                <a href="blog.html" class="nav-link-custom text-white py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Blog</a>
+                <a href="contact.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Contact</a>
+                <a href="feedback.html" class="nav-link-custom py-2" data-bs-dismiss="offcanvas">Feedback</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 2. Blog Hero Banner -->
+    <section class="blog-hero-banner position-relative border-bottom border-secondary border-opacity-25 overflow-hidden">
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-30 z-0">
+            <img src="img/bannerblog.png" alt="Blog Hero Background" class="w-100 h-100 object-fit-cover">
+        </div>
+        <div class="container-xl py-4 position-relative z-1 text-center">
+            <div class="blog-hero-copy">
+                <h1 class="serif-font display-4 text-white mb-2">Timeless Elegance Watches</h1>
+                <p class="serif-font fst-italic text-secondary fs-4 mb-3 fw-light">A new icon in time</p>
+                <p class="text-secondary small fw-light mb-0">
+                    Discovering art, craftsmanship and timeless stories behind every luxury timepiece.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN BLOG CONTENT -->
+    <main class="py-5">
+        <div class="container-xl">
+            
+            <!-- Category Filter Tabs -->
+            <div class="border-bottom border-secondary border-opacity-25 pb-2 mb-4">
+                <div class="d-flex justify-content-center flex-wrap gap-3 gap-md-4 text-sm" aria-label="Filter blog articles">
+                    <button type="button" data-blog-category-filter="all" aria-pressed="true" class="btn btn-link d-flex flex-column align-items-center text-brand-purple fw-medium p-0 text-decoration-none">ALL<span class="d-block mt-2 common-section-accent" aria-hidden="true"></span></button>
+                    <button type="button" data-blog-category-filter="watches" aria-pressed="false" class="btn btn-link text-secondary p-0 text-decoration-none pb-2">WATCHES</button>
+                    <button type="button" data-blog-category-filter="style" aria-pressed="false" class="btn btn-link text-secondary p-0 text-decoration-none pb-2">STYLE</button>
+                    <button type="button" data-blog-category-filter="care" aria-pressed="false" class="btn btn-link text-secondary p-0 text-decoration-none pb-2">CARE</button>
+                    <button type="button" data-blog-category-filter="knowledge" aria-pressed="false" class="btn btn-link text-secondary p-0 text-decoration-none pb-2">KNOWLEDGE</button>
+                    <button type="button" data-blog-category-filter="tew-stories" aria-pressed="false" class="btn btn-link text-secondary p-0 text-decoration-none pb-2">TEW STORIES</button>
+                </div>
+            </div>
+
+            <!-- Blog Layout: Grid system -->
+            <div class="row g-4 g-lg-5">
+                
+                <!-- LEFT COLUMN: Grid of standard blog posts (7 Cols) -->
+                <div class="col-12 col-lg-7" data-blog-column>
+                    <div class="row g-4">
+                        
+                        <!-- Article 1: WATCHES -->
+                        <div class="col-12" data-blog-category-item="watches">
+                            <a href="post-watches.html" class="bg-secondary bg-opacity-25 rounded p-3 d-flex flex-column flex-sm-row gap-3 align-items-center h-100 border border-secondary border-opacity-10 text-decoration-none">
+                                <div class="bg-dark rounded overflow-hidden flex-shrink-0" style="width: 160px; height: 160px;">
+                                    <img src="img/ảnh 11.webp" alt="Watches Article" class="w-100 h-100 object-fit-cover">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span class="text-brand-green fw-semibold text-uppercase extra-small">WATCHES</span>
+                                    <h2 class="serif-font fs-5 text-white my-1">The Mechanics Behind a Timepiece</h2>
+                                    <p class="text-secondary extra-small mb-2">
+                                        Discover how precision gears and intricate movements work together to bring a mechanical watch to life.
+                                    </p>
+                                    <span class="text-secondary extra-small d-block">08.05.2026 by Ash Sas</span>
+                            </div>
+                            </a>
+                        </div>
+
+                        <!-- Article 2: STYLE -->
+                        <div class="col-12" data-blog-category-item="style">
+                            <a href="post-style.html" class="bg-secondary bg-opacity-25 rounded p-3 d-flex flex-column flex-sm-row gap-3 align-items-center h-100 border border-secondary border-opacity-10 text-decoration-none">
+                                <div class="bg-dark rounded overflow-hidden flex-shrink-0" style="width: 160px; height: 160px;">
+                                    <img src="img/ảnh 12.png" alt="Style Article" class="w-100 h-100 object-fit-cover">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span class="text-brand-green fw-semibold text-uppercase extra-small">STYLE</span>
+                                    <h2 class="serif-font fs-5 text-white my-1">A Watch as a Signature of Personal Style</h2>
+                                    <p class="text-secondary extra-small mb-2">
+                                        A watch does more than tell time. It reflects your personality, your taste, and the moments that define you.
+                                    </p>
+                                    <span class="text-secondary extra-small d-block">02.05.2026 by Van Kai</span>
+                            </div>
+                            </a>
+                        </div>
+
+                        <!-- Article 3: CARE -->
+                        <div class="col-12 col-sm-6" data-blog-category-item="care">
+                            <a href="post-care.html" class="bg-secondary bg-opacity-25 rounded p-3 d-flex flex-column gap-2 h-100 border border-secondary border-opacity-10 text-decoration-none">
+                                <div class="bg-dark rounded overflow-hidden mb-2" style="height: 150px;">
+                                    <img src="img/ảnh 3.jpg" alt="Care Article" class="w-100 h-100 object-fit-cover">
+                                </div>
+                                <span class="text-brand-green fw-semibold text-uppercase extra-small">CARE</span>
+                                <h3 class="serif-font fs-6 text-white m-0">How to Properly Care for Your Watch</h3>
+                                <p class="text-secondary extra-small mb-2 flex-grow-1">
+                                    Simple care habits can help preserve the beauty, performance, and longevity of your timepiece.
+                                </p>
+                                <span class="text-secondary extra-small">20.03.2026 by Saxy Town</span>
+                            </a>
+                        </div>
+
+                        <!-- Article 4: KNOWLEDGE -->
+                        <div class="col-12 col-sm-6" data-blog-category-item="knowledge">
+                            <a href="post-knowledge.html" class="bg-secondary bg-opacity-25 rounded p-3 d-flex flex-column gap-2 h-100 border border-secondary border-opacity-10 text-decoration-none">
+                                <div class="bg-dark rounded overflow-hidden mb-2" style="height: 150px;">
+                                    <img src="img/ảnh 2.jpg" alt="Knowledge Article" class="w-100 h-100 object-fit-cover">
+                                </div>
+                                <span class="text-brand-green fw-semibold text-uppercase extra-small">KNOWLEDGE</span>
+                                <h3 class="serif-font fs-6 text-white m-0">5 Things to Know Before Choosing a Watch</h3>
+                                <p class="text-secondary extra-small mb-2 flex-grow-1">
+                                    From movement and materials to proportions and design, discover the key elements to consider.
+                                </p>
+                                <span class="text-secondary extra-small">20.03.2026 by Saxy Town</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Featured Large Story - TEW STORIES (5 Cols) -->
+                <div class="col-12 col-lg-5" data-blog-column data-blog-category-item="tew-stories">
+                    <div class="bg-secondary bg-opacity-25 rounded p-4 h-100 border border-secondary border-opacity-10 d-flex flex-column">
+                        <div class="rounded overflow-hidden mb-4" style="height: 380px;">
+                            <img src="img/tewabout2.png" alt="TEW Stories Featured Image" class="w-100 h-100 object-fit-cover">
+                        </div>
+                        <span class="text-brand-green fw-semibold text-uppercase extra-small">TEW STORIES</span>
+                        <h2 class="serif-font fs-3 text-white my-2">THE ART OF MEASURING TIME</h2>
+                        <p class="text-secondary small fw-light lh-lg flex-grow-1">
+                            Time has always been more than numbers on a dial. From the earliest timekeeping instruments to modern mechanical watches, people have always searched for ways to understand and preserve the passing of time. Behind every carefully crafted timepiece lies a combination of precision, design, and human craftsmanship. Discover how these elements come together to transform a simple instrument into an object with meaning and lasting character.
+                        </p>
+                        <div class="pt-3">
+                            <a href="post-tew-stories .html" class="view-all-link">Read Full Story <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+<!-- 8. Footer Section -->
+    <footer id="contact" class="bg-brand-footer text-white pt-5 pb-3">
+    <div class="container-xl">
+        <div class="row g-4 pb-4 align-items-start">
+            
+            <!-- Column 1: TEW logo -->
+            <div class="col-md-3 d-flex align-items-center pe-md-4">
+                <a href="index.html" aria-label="TEW home">
+                    <img src="img/logo.png" alt="TEW Logo" class="img-fluid my-auto" style="max-height: 120px;" />
+                </a>
+            </div>
+
+            <!-- Column 2: GET IN TOUCH -->
+            <div class="col-md-2" style="transform: translateX(-60px);">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">GET IN TOUCH</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small text-light mb-3">
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-globe"></i> tewwatches.com</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-location-dot"></i> Can Tho city</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-phone"></i> 09xxxxxxxx</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-envelope"></i> tewwatches.gmail.com</li>
+                </ul>
+                <div class="d-flex gap-3 text-light fs-5" aria-label="Social media">
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-facebook"></i></span>
+                </div>
+            </div>
+
+            <!-- Column 3: SITEMAP -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">SITEMAP</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">Products</a></li>
+                    <li><a href="about us.html" class="text-white text-opacity-75 text-decoration-none">About us</a></li>
+                    <li><a href="blog.html" class="text-white text-opacity-75 text-decoration-none">Blog</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact</a></li>
+                    <li><a href="cart.html" class="text-white text-opacity-75 text-decoration-none">Cart</a></li>
+                    <li><a href="sign in.html" class="text-white text-opacity-75 text-decoration-none">Log in</a></li>
+                    <li><a href="feedback.html" class="text-white text-opacity-75 text-decoration-none">Feedback</a></li>
+                    <li><a href="chatbot.html" class="text-white text-opacity-75 text-decoration-none">Chatbot</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: COLLECTION -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">COLLECTION</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">All watches</a></li>
+                    <li><a href="index.html?brand=rolex#products" class="text-white text-opacity-75 text-decoration-none">Rolex</a></li>
+                    <li><a href="index.html?brand=omega#products" class="text-white text-opacity-75 text-decoration-none">Omega</a></li>
+                    <li><a href="index.html?brand=patek#products" class="text-white text-opacity-75 text-decoration-none">Patek Philippe</a></li>
+                    <li><a href="index.html?timepiece=featured#timepieces" class="text-white text-opacity-75 text-decoration-none">Featured watches</a></li>
+                    <li><a href="index.html?timepiece=new-arrivals#timepieces" class="text-white text-opacity-75 text-decoration-none">New arrivals</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5: CUSTOMER CARE -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">CUSTOMER CARE</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact Us</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Shipping &amp; Delivery</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Returns &amp; Exchanges</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 6: OUR BRANDS -->
+            <div class="col-md-1 text-center text-md-start">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase text-nowrap">OUR BRANDS</h5>
+                <div class="d-flex flex-column gap-2 align-items-center" style="width: 100px;">
+                    <a href="index.html?brand=rolex#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Rolex watches">
+                        <img src="img/images.png" alt="Rolex" class="img-fluid" style="max-height: 40px; transform: scale(1.2672);" />
+                    </a>
+                    <a href="index.html?brand=patek#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Patek Philippe watches">
+                        <img src="img/images1.png" alt="Patek Philippe" class="img-fluid" style="max-height: 40px; transform: scale(1.32);" />
+                    </a>
+                    <a href="index.html?brand=omega#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Omega watches">
+                        <img src="img/images2.png" alt="Omega" class="img-fluid" style="max-height: 40px; transform: scale(0.96);" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="border-top border-white border-opacity-25 pt-3 text-center text-white text-opacity-75 small">
+            <p class="m-0">&copy; 2026 TimelessEleganceWatches</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- File JavaScript Dùng Chung Cho Tất Cả Các Trang -->
+    <script src="js/common.js"></script>
+</body>
+</html>

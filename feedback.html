@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEEDBACK - TEW - Timeless Elegance Watches</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <!-- Bootstrap CSS 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Spectral for headings & Inter for Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Shared styles for all pages -->
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="page-feedback bg-black text-white">
+
+    <!-- 1. Header / Navbar -->
+        <!-- 1. Header / Navbar -->
+    <header class="bg-brand-header border-bottom border-success-subtle border-opacity-10 text-white sticky-top">
+        <div class="container-xl common-layout-height-80">
+            <div class="d-flex align-items-center justify-content-between py-2 py-md-0 common-layout-height-80">
+                <!-- Hamburger Menu (Mobile) & Brand Logo -->
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-link text-white p-1 d-md-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars fs-4"></i>
+                    </button>
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="TEW logo" class="common-logo-small" />
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="d-none d-md-flex flex-grow-1 align-items-center justify-content-center gap-4 gap-lg-5">
+                    <a href="index.html" class="nav-link-custom text-white">Home</a>
+                    <a href="product.html" class="nav-link-custom">Products</a>
+                    <a href="about us.html" class="nav-link-custom">About us</a>
+                    <a href="blog.html" class="nav-link-custom">Blog</a>
+                    <a href="contact.html" class="nav-link-custom">Contact</a>
+                    <a href="feedback.html" class="nav-link-custom">Feedback</a>
+                </nav>
+
+                <!-- Action Icons Right -->
+                <div class="d-flex align-items-center gap-3 gap-md-4 text-light">
+                    <button class="btn btn-link text-white p-1" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass fs-5"></i>
+                    </button>
+                    <a href="cart.html" class="btn btn-link text-white p-1" aria-label="Cart">
+                        <i class="fa-solid fa-bag-shopping fs-5"></i>
+                    </a>
+                    <a href="sign in.html" class="btn btn-link text-white p-1" aria-label="Account">
+                        <i class="fa-solid fa-circle-user fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Offcanvas Mobile Navigation Menu -->
+    <div class="offcanvas offcanvas-start text-bg-dark bg-brand-header" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+            <h5 class="offcanvas-title serif-font text-white" id="mobileMenuLabel">TEW WATCHES</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="d-flex flex-column gap-3 fs-5">
+                <a href="index.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Home</a>
+                <a href="product.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Products</a>
+                <a href="about us.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">About us</a>
+                <a href="blog.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Blog</a>
+                <a href="contact.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Contact</a>
+                <a href="feedback.html" class="nav-link-custom text-white py-2" data-bs-dismiss="offcanvas">Feedback</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 2. Hero Banner Section -->
+    <section class="position-relative d-flex align-items-center justify-content-center border-bottom border-secondary border-opacity-25 overflow-hidden py-5 common-feedback-header-banner">
+        <!-- Banner Image Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-40 z-0">
+            <img src="img/background feedback.jpg" alt="Feedback Header Banner" class="w-100 h-100 object-fit-cover">
+        </div>
+        
+        
+        <div class="container-xl py-4 position-relative z-1 text-center common-feedback-header-content">
+            <h1 class="serif-font display-4 text-white mb-2">Feedback here</h1>
+            <p class="text-white small fw-light mb-0">How was your experience? Share your feedback to help us improve!</p>
+        </div>
+    </section>
+
+    <!-- 3. Feedback Form Card Section -->
+    <section class="py-5 bg-black">
+        <div class="container-xl">
+            <div class="mx-auto p-4 p-md-5 rounded-3 bg-brand-card border border-secondary border-opacity-25" style="max-width: 680px;">
+                
+                <!-- Divider Title -->
+                <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+                    <div class="section-divider"></div>
+                    <h2 class="serif-font fs-5 text-brand-green fw-normal m-0 text-uppercase tracking-wide">Tell us what you think</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <!-- Feedback Form -->
+                <form action="#" method="POST">
+                    <!-- Rating Stars -->
+                    <fieldset class="border-0 p-0 m-0 mb-4">
+                        <legend class="visually-hidden">Rate your experience from 1 to 5 stars</legend>
+                        <div class="feedback-rating">
+                            <input class="feedback-rating-input" type="radio" id="rating-5" name="rating" value="5">
+                            <label class="feedback-rating-label" for="rating-5"><i class="fa-solid fa-star" aria-hidden="true"></i><span class="visually-hidden">5 stars</span></label>
+                            <input class="feedback-rating-input" type="radio" id="rating-4" name="rating" value="4">
+                            <label class="feedback-rating-label" for="rating-4"><i class="fa-solid fa-star" aria-hidden="true"></i><span class="visually-hidden">4 stars</span></label>
+                            <input class="feedback-rating-input" type="radio" id="rating-3" name="rating" value="3">
+                            <label class="feedback-rating-label" for="rating-3"><i class="fa-solid fa-star" aria-hidden="true"></i><span class="visually-hidden">3 stars</span></label>
+                            <input class="feedback-rating-input" type="radio" id="rating-2" name="rating" value="2">
+                            <label class="feedback-rating-label" for="rating-2"><i class="fa-solid fa-star" aria-hidden="true"></i><span class="visually-hidden">2 stars</span></label>
+                            <input class="feedback-rating-input" type="radio" id="rating-1" name="rating" value="1" required>
+                            <label class="feedback-rating-label" for="rating-1"><i class="fa-solid fa-star" aria-hidden="true"></i><span class="visually-hidden">1 star</span></label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Input Name -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label text-light small">Your name</label>
+                        <input type="text" class="form-control bg-dark border-secondary border-opacity-50 text-white shadow-none placeholder-secondary" id="name" placeholder="timelesselegancewatches" required>
+                    </div>
+
+                    <!-- Input Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-light small">Email</label>
+                        <input type="email" class="form-control bg-dark border-secondary border-opacity-50 text-white shadow-none placeholder-secondary" id="email" placeholder="Product of timelesselegancewatches" required>
+                    </div>
+
+                    <!-- Textarea Problem -->
+                    <div class="mb-4">
+                        <label for="problem" class="form-label text-light small">Your problem</label>
+                        <textarea class="form-control bg-dark border-secondary border-opacity-50 text-white shadow-none" id="problem" rows="5" required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn-emerald px-5 py-2">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Customer Reviews -->
+    <section class="border-top border-bottom border-secondary border-opacity-25 py-5 bg-black">
+        <div class="container-xl">
+            <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+                <div class="section-divider"></div>
+                <h2 class="serif-font fs-4 text-brand-green fw-normal m-0 text-uppercase tracking-wide">Customer Reviews</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="text-center mb-4" aria-label="Average rating: 4.7 out of 5 stars">
+                <div class="text-warning fs-4 mb-1" aria-hidden="true">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-white mb-0"><strong class="fs-5">4.7/5</strong> <span class="text-secondary">Based on 100 reviews</span></p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="bg-brand-card border border-secondary border-opacity-25 rounded-3 p-4 h-100">
+                        <div class="d-flex align-items-center gap-2 text-warning mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-secondary mb-3">“The watch arrived exactly as described, and the quality felt truly premium. The buying experience was smooth from start to finish.”</p>
+                        <div class="border-top border-secondary border-opacity-25 pt-3">
+                            <h5 class="text-white mb-1">Linh N.</h5>
+                            <span class="small text-secondary">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bg-brand-card border border-secondary border-opacity-25 rounded-3 p-4 h-100">
+                        <div class="d-flex align-items-center gap-2 text-warning mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-secondary mb-3">“Beautiful craftsmanship and elegant design. I loved the packaging and the attention to detail. It definitely feels like a luxury piece.”</p>
+                        <div class="border-top border-secondary border-opacity-25 pt-3">
+                            <h5 class="text-white mb-1">Minh T.</h5>
+                            <span class="small text-secondary">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bg-brand-card border border-secondary border-opacity-25 rounded-3 p-4 h-100">
+                        <div class="d-flex align-items-center gap-2 text-warning mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <p class="text-secondary mb-3">“I’ve received many compliments already. The watch looks stunning and the service team was responsive and professional.”</p>
+                        <div class="border-top border-secondary border-opacity-25 pt-3">
+                            <h5 class="text-white mb-1">An K.</h5>
+                            <span class="small text-secondary">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+                <a href="feedback1.html" class="view-all-link">View all <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </section>
+
+<!-- 8. Footer Section -->
+    <footer id="contact" class="bg-brand-footer text-white pt-5 pb-3">
+    <div class="container-xl">
+        <div class="row g-4 pb-4 align-items-start">
+            
+            <!-- Column 1: TEW logo -->
+            <div class="col-md-3 d-flex align-items-center pe-md-4">
+                <a href="index.html" aria-label="TEW home">
+                    <img src="img/logo.png" alt="TEW Logo" class="img-fluid my-auto" style="max-height: 120px;" />
+                </a>
+            </div>
+
+            <!-- Column 2: GET IN TOUCH -->
+            <div class="col-md-2" style="transform: translateX(-60px);">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">GET IN TOUCH</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small text-light mb-3">
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-globe"></i> tewwatches.com</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-location-dot"></i> Can Tho city</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-phone"></i> 09xxxxxxxx</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-envelope"></i> tewwatches.gmail.com</li>
+                </ul>
+                <div class="d-flex gap-3 text-light fs-5" aria-label="Social media">
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-facebook"></i></span>
+                </div>
+            </div>
+
+            <!-- Column 3: SITEMAP -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">SITEMAP</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">Products</a></li>
+                    <li><a href="about us.html" class="text-white text-opacity-75 text-decoration-none">About us</a></li>
+                    <li><a href="blog.html" class="text-white text-opacity-75 text-decoration-none">Blog</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact</a></li>
+                    <li><a href="cart.html" class="text-white text-opacity-75 text-decoration-none">Cart</a></li>
+                    <li><a href="sign in.html" class="text-white text-opacity-75 text-decoration-none">Log in</a></li>
+                    <li><a href="feedback.html" class="text-white text-opacity-75 text-decoration-none">Feedback</a></li>
+                    <li><a href="chatbot.html" class="text-white text-opacity-75 text-decoration-none">Chatbot</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: COLLECTION -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">COLLECTION</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">All watches</a></li>
+                    <li><a href="index.html?brand=rolex#products" class="text-white text-opacity-75 text-decoration-none">Rolex</a></li>
+                    <li><a href="index.html?brand=omega#products" class="text-white text-opacity-75 text-decoration-none">Omega</a></li>
+                    <li><a href="index.html?brand=patek#products" class="text-white text-opacity-75 text-decoration-none">Patek Philippe</a></li>
+                    <li><a href="index.html?timepiece=featured#timepieces" class="text-white text-opacity-75 text-decoration-none">Featured watches</a></li>
+                    <li><a href="index.html?timepiece=new-arrivals#timepieces" class="text-white text-opacity-75 text-decoration-none">New arrivals</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5: CUSTOMER CARE -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">CUSTOMER CARE</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact Us</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Shipping &amp; Delivery</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Returns &amp; Exchanges</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 6: OUR BRANDS -->
+            <div class="col-md-1 text-center text-md-start">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase text-nowrap">OUR BRANDS</h5>
+                <div class="d-flex flex-column gap-2 align-items-center" style="width: 100px;">
+                    <a href="index.html?brand=rolex#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Rolex watches">
+                        <img src="img/images.png" alt="Rolex" class="img-fluid" style="max-height: 40px; transform: scale(1.2672);" />
+                    </a>
+                    <a href="index.html?brand=patek#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Patek Philippe watches">
+                        <img src="img/images1.png" alt="Patek Philippe" class="img-fluid" style="max-height: 40px; transform: scale(1.32);" />
+                    </a>
+                    <a href="index.html?brand=omega#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Omega watches">
+                        <img src="img/images2.png" alt="Omega" class="img-fluid" style="max-height: 40px; transform: scale(0.96);" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="border-top border-white border-opacity-25 pt-3 text-center text-white text-opacity-75 small">
+            <p class="m-0">&copy; 2026 TimelessEleganceWatches</p>
+        </div>
+    </div>
+</footer>
+
+ <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- File JavaScript Dùng Chung Cho Tất Cả Các Trang -->
+    <script src="js/common.js"></script>
+    <!-- SCRIPT XỬ LÝ LƯU VÀ HIỂN THỊ FEEDBACK -->
+    <script>
+        const feedbackForm = document.getElementById('feedbackForm');
+        const dynamicFeedbackContainer = document.getElementById('dynamicFeedbackContainer');
+
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // 1. Lấy dữ liệu từ form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const problem = document.getElementById('problem').value;
+            const selectedRating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : 5;
+            const dateStr = new Date().toLocaleDateString('vi-VN');
+
+            // 2. Tạo object chứa thông tin feedback
+            const newFeedback = {
+                name: name,
+                email: email,
+                problem: problem,
+                rating: selectedRating,
+                date: dateStr
+            };
+
+            // 3. Lưu vào localStorage để trang tổng hợp có thể đọc được
+            let allFeedbacks = JSON.parse(localStorage.getItem('tew_feedbacks')) || [];
+            allFeedbacks.unshift(newFeedback); // Đẩy feedback mới lên đầu mảng
+            localStorage.setItem('tew_feedbacks', JSON.stringify(allFeedbacks));
+
+            // 4. Hiển thị ngay lập tức xuống dưới form (giống code cũ)
+            let starsHtml = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= selectedRating) {
+                    starsHtml += '<i class="fa-solid fa-star"></i>';
+                } else {
+                    starsHtml += '<i class="fa-regular fa-star"></i>';
+                }
+            }
+
+            const feedbackCard = document.createElement('div');
+            feedbackCard.className = 'bg-brand-card border border-secondary border-opacity-25 rounded-3 p-4 mb-3';
+            feedbackCard.innerHTML = `
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <div class="d-flex align-items-center gap-1 text-warning">
+                        ${starsHtml}
+                    </div>
+                    <span class="small text-secondary">${dateStr}</span>
+                </div>
+                <p class="text-white mb-3">“${problem}”</p>
+                <div class="border-top border-secondary border-opacity-25 pt-3 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="text-white mb-1 fs-6">${name}</h5>
+                        <span class="small text-secondary">${email}</span>
+                    </div>
+                    <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">New Feedback</span>
+                </div>
+            `;
+            dynamicFeedbackContainer.prepend(feedbackCard);
+
+            // 5. Reset form
+            feedbackForm.reset();
+            alert('Cảm ơn bạn đã gửi feedback! Phản hồi của bạn đã được ghi nhận.');
+        });
+    </script>
+</body>
+</html>

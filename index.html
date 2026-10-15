@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME - TEW - Timeless Elegance Watches</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <!-- Bootstrap CSS 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Spectral for headings & Inter for Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Shared styles for all pages -->
+    <link rel="stylesheet" href="css/common.css">
+    
+    
+</head>
+<body class="page-home">
+
+    <!-- 1. Header / Navbar -->
+    <header class="bg-brand-header border-bottom border-success-subtle border-opacity-10 text-white sticky-top">
+        <div class="container-xl common-layout-height-80">
+            <div class="d-flex align-items-center justify-content-between py-2 py-md-0 common-layout-height-80">
+                <!-- Hamburger Menu (Mobile) & Brand Logo -->
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-link text-white p-1 d-md-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars fs-4"></i>
+                    </button>
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="TEW logo" class="common-logo-small" />
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="d-none d-md-flex flex-grow-1 align-items-center justify-content-center gap-4 gap-lg-5">
+                    <a href="index.html" class="nav-link-custom text-white">Home</a>
+                    <a href="product.html" class="nav-link-custom">Products</a>
+                    <a href="about us.html" class="nav-link-custom">About us</a>
+                    <a href="blog.html" class="nav-link-custom">Blog</a>
+                    <a href="contact.html" class="nav-link-custom">Contact</a>
+                    <a href="feedback.html" class="nav-link-custom">Feedback</a>
+                </nav>
+
+                <!-- Action Icons Right -->
+                <div class="d-flex align-items-center gap-3 gap-md-4 text-light">
+                    <button class="btn btn-link text-white p-1" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass fs-5"></i>
+                    </button>
+                    <a href="cart.html" class="btn btn-link text-white p-1" aria-label="Cart">
+                        <i class="fa-solid fa-bag-shopping fs-5"></i>
+                    </a>
+                    <a href="sign in.html" class="btn btn-link text-white p-1" aria-label="Account">
+                        <i class="fa-solid fa-circle-user fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Offcanvas Mobile Navigation Menu -->
+    <div class="offcanvas offcanvas-start text-bg-dark bg-brand-header" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+            <h5 class="offcanvas-title serif-font text-white" id="mobileMenuLabel">TEW WATCHES</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="d-flex flex-column gap-3 fs-5">
+                <a href="index.html" class="nav-link-custom text-white py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Home</a>
+                <a href="product.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Products</a>
+                <a href="about us.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">About us</a>
+                <a href="blog.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Blog</a>
+                <a href="contact.html" class="nav-link-custom py-2 border-bottom border-secondary border-opacity-10" data-bs-dismiss="offcanvas">Contact</a>
+                <a href="feedback.html" class="nav-link-custom py-2" data-bs-dismiss="offcanvas">Feedback</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="position-relative d-flex align-items-center border-bottom border-secondary border-opacity-25 overflow-hidden common-content-min-height">
+        <!-- Hero Background Image Container -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-40 z-0">
+            <img src="img/home.jpg" alt="Rolex Background Banner" class="w-100 h-100 object-fit-cover">
+        </div>
+        
+        <div class="container-xl py-5 position-relative z-1">
+            <div class="common-content-width-580">
+                <!-- Đã loại bỏ text-nowrap để chữ không tràn lề trên màn hình nhỏ -->
+                <h1 class="serif-font display-4 display-md-3 text-white mb-2">
+                    Timeless Elegance Watches
+                </h1>
+                <p class="serif-font fst-italic text-secondary fs-4 mb-3 fw-light">
+                    A Signature of Time
+                </p>
+                <p class="text-secondary small mb-4 fw-light">
+                    Timeless Elegance Watches Curating extraordinary timepieces for those who appreciate the art of time.
+                </p>    
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="blog.html" class="btn-outline-custom flex-fill flex-sm-grow-0">Discover</a>
+                    <a href="product.html" class="btn-emerald flex-fill flex-sm-grow-0">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props Bar -->
+    <div class="border-bottom border-secondary border-opacity-25 py-4 common-card-dark">
+        <div class="container-xl">
+            <div class="row text-center g-3">
+                <div class="col-12 col-md-4">
+                    <h5 class="text-light fw-normal text-uppercase mb-1 common-eyebrow-text">Extended Warranty</h5>
+                    <p class="text-secondary mb-0 common-reference-text">Up To 15 Year Coverage</p>
+                </div>
+                <div class="col-12 col-md-4 border-start-md">
+                    <h5 class="text-light fw-normal text-uppercase mb-1 common-eyebrow-text">Free Shipping</h5>
+                    <p class="text-secondary mb-0 common-reference-text">We Offer Free Shipping All Over The World</p>
+                </div>
+                <div class="col-12 col-md-4 border-start-md">
+                    <h5 class="text-light fw-normal text-uppercase mb-1 common-eyebrow-text">Free 30 Days Returns</h5>
+                    <p class="text-secondary mb-0 common-reference-text">Offered On All Items</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Featured Brand Section -->
+    <section id="products" class="py-5 container-xl">
+        <div class="mb-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+                <div class="section-divider"></div>
+                <h2 class="serif-font fs-2 text-brand-green fw-normal m-0">Featured Brand</h2>
+                <div class="section-divider"></div>
+            </div>
+            <p class="text-secondary small fst-italic fw-light">Discover our finest timepieces</p>
+        </div>
+
+        <!-- Filters & View All Link -->
+        <div class="border-bottom border-secondary border-opacity-25 pb-2 mb-4">
+            <div class="d-flex justify-content-center gap-3 gap-md-4 text-sm" role="group" aria-label="Filter watches by brand">
+                <button class="btn btn-link d-flex flex-column align-items-center text-brand-purple fw-medium p-0 text-decoration-none" type="button" data-brand-filter="rolex" aria-pressed="true">Rolex<span class="d-block mt-2 common-section-accent" aria-hidden="true"></span></button>
+                <button class="btn btn-link text-secondary p-0 text-decoration-none pb-2" type="button" data-brand-filter="patek" aria-pressed="false">Patek Philippe<span class="d-block mt-2 common-section-accent d-none" aria-hidden="true"></span></button>
+                <button class="btn btn-link text-secondary p-0 text-decoration-none pb-2" type="button" data-brand-filter="omega" aria-pressed="false">Omega<span class="d-block mt-2 common-section-accent d-none" aria-hidden="true"></span></button>
+            </div>
+            <div class="d-flex justify-content-end mt-2">
+							<a href="product.html" class="view-all-link">View all <i class="fa-solid fa-arrow-right-long"></i></a>
+			</div>
+        </div>
+
+        <!-- 8 Product Cards Grid (Responsive Layout: 1 col on XS, 2 on SM, 3 on MD, 4 on LG) -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 g-md-4" data-brand-grid>
+            
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex1.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Datejust 36</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 126234</span>
+                    <span class="text-brand-green fw-semibold">$10.100</span>
+                </div>
+            </div>
+
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex2.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Day-Date 40</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 228235</span>
+                    <span class="text-brand-green fw-semibold">$54.200</span>
+                </div>
+            </div>
+
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex3.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Submariner Date</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 126610LN</span>
+                    <span class="text-brand-green fw-semibold">$11.350</span>
+                </div>
+            </div>
+
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex4.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> GMT-Master II</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 126710BLNR</span>
+                    <span class="text-brand-green fw-semibold">$12.000</span>
+                </div>
+            </div>
+
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex5.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Explorer II</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 226570</span>
+                    <span class="text-brand-green fw-semibold">$10.600</span>
+                </div>
+            </div>
+
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex6.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Cosmograph Daytona</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 126515LN</span>
+                    <span class="text-brand-green fw-semibold">$44.800</span>
+                </div>
+            </div>
+
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex7.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Day-Date 40</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 228238</span>
+                    <span class="text-brand-green fw-semibold">$50.400</span>
+                </div>
+            </div>
+
+            <div class="col" data-brand="rolex">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex8.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Sky-Dweller</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 336934</span>
+                    <span class="text-brand-green fw-semibold">$17.750</span>
+                </div>
+            </div>
+
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/1.png" alt="Patek Philippe Calatrava" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Calatrava</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/2.png" alt="Patek Philippe Annual Calendar" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Annual Calendar</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/3.png" alt="Patek Philippe Nautilus" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Nautilus</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/4.png" alt="Patek Philippe Grand Complications" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Grand Complications</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/5.png" alt="Patek Philippe Complications" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Complications</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/6.png" alt="Patek Philippe Perpetual Calendar" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Perpetual Calendar</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/7.png" alt="Patek Philippe Aquanaut" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Aquanaut</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="patek">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/8.png" alt="Patek Philippe Nautilus" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Nautilus</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega1.png" alt="Omega Seamaster" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Seamaster</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega2.png" alt="Omega Speedmaster" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Speedmaster</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega3.png" alt="Omega Constellation" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Constellation</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega4.png" alt="Omega De Ville" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">De Ville</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega5.png" alt="Omega Seamaster Diver 300M" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Seamaster Diver 300M</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega6.png" alt="Omega Planet Ocean" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Planet Ocean</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega7.png" alt="Omega Aqua Terra" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Aqua Terra</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-brand="omega">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega8.png" alt="Omega Speedmaster" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Speedmaster</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. New Collection Banner Section -->
+    <section class="position-relative py-5 border-top border-bottom border-secondary border-opacity-25 overflow-hidden">
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-25 z-0">
+            <img src="img/Three_luxury_watches_displayed_t..._2K_20260926070458.jpg" alt="New Collection Banner" class="w-100 h-100 object-fit-cover">
+        </div>
+
+        <div class="container text-center position-relative z-1 py-4 common-content-width-800">
+            <h2 class="serif-font display-5 text-white font-normal mb-3">New Collection</h2>
+            <p class="text-secondary small mb-4 fw-light mx-auto common-content-width-500">
+                Discover our latest timepieces, crafted with precision and elegance.
+            </p>
+            <a href="product.html" class="btn-emerald">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- 5. From Our Shop Section -->
+    <section id="timepieces" class="py-5 container-xl">
+        <div class="mb-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+                <div class="section-divider"></div>
+                <h2 class="serif-font fs-2 text-brand-green fw-normal m-0">Our Timepieces</h2>
+                <div class="section-divider"></div>
+            </div>
+            <p class="text-secondary small fst-italic fw-light">Discover our finest selection of luxury watches</p>
+        </div>
+
+        <div class="border-bottom border-secondary border-opacity-25 pb-2 mb-4">
+            <div class="d-flex justify-content-center gap-3 gap-md-4 text-sm" role="group" aria-label="Filter timepieces">
+                <button class="btn btn-link d-flex flex-column align-items-center text-brand-purple fw-medium p-0 text-decoration-none" type="button" data-timepiece-filter="featured" aria-pressed="true">Featured<span class="d-block mt-2 common-section-accent" aria-hidden="true"></span></button>
+                <button class="btn btn-link text-secondary p-0 text-decoration-none pb-2" type="button" data-timepiece-filter="new-arrivals" aria-pressed="false">New arrivals<span class="d-block mt-2 common-section-accent d-none" aria-hidden="true"></span></button>
+                <button class="btn btn-link text-secondary p-0 text-decoration-none pb-2" type="button" data-timepiece-filter="bestseller" aria-pressed="false">Bestseller<span class="d-block mt-2 common-section-accent d-none" aria-hidden="true"></span></button>
+            </div>
+             <div class="d-flex justify-content-end mt-2">
+							<a href="product.html" class="view-all-link">View all <i class="fa-solid fa-arrow-right-long"></i></a>
+			</div>
+        </div>
+
+        <!-- 4 Product Cards Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 g-md-4" data-timepiece-grid>
+            <div class="col" data-timepiece-category="featured">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex2.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Day-Date 40</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 228235</span>
+                    <span class="text-brand-green fw-semibold">$54.200</span>
+                </div>
+            </div>
+
+             <div class="col" data-timepiece-category="featured">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex7.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Day-Date 40</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 228238</span>
+                    <span class="text-brand-green fw-semibold">$50.400</span>
+                </div>
+            </div>
+
+           <div class="col" data-timepiece-category="featured">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/4.png" alt="Patek Philippe Grand Complications" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Grand Complications</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref: 5270R-001</span>
+                    <span class="text-brand-green fw-semibold">$220.000</span>
+                </div>
+            </div>
+
+            <div class="col" data-timepiece-category="featured">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex6.png" alt="Rolex Watch" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small"> Cosmograph Daytona</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 126515LN</span>
+                    <span class="text-brand-green fw-semibold">$44.800</span>
+                </div>
+            </div>
+
+            <div class="col d-none" data-timepiece-category="new-arrivals">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/1.png" alt="Omega Seamaster" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Seamaster</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-timepiece-category="new-arrivals">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/7.png" alt="Omega Speedmaster" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Speedmaster</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-timepiece-category="new-arrivals">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/omega8.png" alt="Patek Philippe Calatrava" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Calatrava</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-timepiece-category="new-arrivals">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex8.png" alt="Patek Philippe Nautilus" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Nautilus</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+
+            <div class="col d-none" data-timepiece-category="bestseller">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex1.png" alt="Rolex Day-Date 40" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Day-Date 40</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 228235</span>
+                    <span class="text-brand-green fw-semibold">$54.200</span>
+                </div>
+            </div>
+            <div class="col d-none" data-timepiece-category="bestseller">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/rolex5.png" alt="Rolex Cosmograph Daytona" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Cosmograph Daytona</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Ref. 126515LN</span>
+                    <span class="text-brand-green fw-semibold">$44.800</span>
+                </div>
+            </div>
+            <div class="col d-none" data-timepiece-category="bestseller">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/6.png" alt="Omega Seamaster Diver 300M" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Seamaster Diver 300M</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Omega</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+            <div class="col d-none" data-timepiece-category="bestseller">
+                <div class="bg-brand-card rounded p-3 border text-center d-flex flex-column align-items-center h-100">
+                    <div class="w-100 rounded bg-dark d-flex align-items-center justify-content-center p-2 mb-3 common-watch-frame">
+                        <img src="img/5.png" alt="Patek Philippe Aquanaut" class="img-fluid object-fit-contain common-watch-image">
+                    </div>
+                    <h5 class="text-light fw-light mb-2 common-product-title-small">Aquanaut</h5>
+                    <span class="text-secondary small mb-1 common-reference-text">Patek Philippe</span>
+                    <span class="text-brand-green fw-semibold">Price on request</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. About TEW Section -->
+    <section id="about" class="py-5 container-xl">
+        <div class="mb-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+                <div class="section-divider"></div>
+                <h2 class="serif-font fs-2 text-brand-green fw-normal m-0">About TEW</h2>
+                <div class="section-divider"></div>
+            </div>
+            <p class="text-secondary small fst-italic fw-light">Where Fine Watchmaking Meets High Luxury</p>
+        </div>
+
+        <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-6">
+                <div class="w-100 bg-brand-card rounded border overflow-hidden mx-auto common-square-image-frame">
+                    <img src="img/tewabout2.png" alt="About TEW" class="w-100 h-auto">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="d-flex flex-column gap-3 text-secondary fs-6 fw-light">
+                    <p class="m-0 common-loose-line-height">
+                        At Timeless Elegance Watches (TEW), we believe a watch is far more than just an instrument that tells time. It is a reflection of character, a masterpiece of exquisite craftsmanship, and a timeless legacy that tells your own story.
+                    </p>
+                    <p class="m-0 common-loose-line-height">
+                        We take pride in being the ultimate destination connecting discerning collectors with the world’s most prestigious timepieces from Rolex, OMEGA, and Patek Philippe. Every single piece in our collection is meticulously curated for its heritage, flawless precision, and enduring value.
+                    </p>
+                    <p class="m-0 common-loose-line-height">
+                        Our Philosophy: True luxury does not seek attention. It speaks through precision, heritage, and understated elegance.
+                    </p>
+                    <p class="m-0 common-loose-line-height">
+                        Explore our collection today to find the timepiece that transcends generations.
+                    </p>
+                    <div class="mt-2">
+                        <a href="about us.html" class="view-all-link text-white fs-6">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. From Our Blog -->
+    <section id="blog" class="py-5 container-xl">
+        <div class="mb-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+                <div class="section-divider"></div>
+                <h2 class="serif-font fs-2 text-brand-green fw-normal m-0">From Our Blog</h2>
+                <div class="section-divider"></div>
+            </div>
+            <p class="text-secondary small fst-italic fw-light">Stories behind the timepieces</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <article class="bg-brand-card rounded overflow-hidden border h-100 position-relative">
+                    <img src="img/ảnh 11.webp" alt="Luxury watch close-up" class="w-100 h-auto d-block object-fit-cover common-article-image">
+                    <a href="post-knowledge.html" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
+                        <h3 class="serif-font fs-4 text-white mb-2">The Mechanics Behind a Timepiece</h3>
+                        <p class="text-light small fw-light mb-3">Discover how precision gears and intricate movements work together to bring a mechanical watch to life.</p>
+                        <span class="view-all-link">Read more <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
+                    </a>
+                </article>
+            </div>
+            <div class="col">
+                <article class="bg-brand-card rounded overflow-hidden border h-100 position-relative">
+                    <img src="img/ảnh 12.png" alt="Classic timepiece detail" class="w-100 h-auto d-block object-fit-cover common-article-image">
+                    <a href="post-style.html" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
+                        <h3 class="serif-font fs-4 text-white mb-2">A Watch as a Signature of Personal Style</h3>
+                        <p class="text-light small fw-light mb-3">A watch does more than tell time. It reflects your personality, your taste, and the moments that define you.</p>
+                        <span class="view-all-link">Read more <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
+                    </a>
+                </article>
+            </div>
+            <div class="col">
+                <article class="bg-brand-card rounded overflow-hidden border h-100 position-relative">
+                    <img src="img/ảnh 3.jpg" alt="Luxury watch on display" class="w-100 h-auto d-block object-fit-cover common-article-image">
+                    <a href="post-care.html" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
+                        <h3 class="serif-font fs-4 text-white mb-2">How to Properly Care for Your Watch</h3>
+                        <p class="text-light small fw-light mb-3">Simple care habits can help preserve the beauty, performance, and longevity of your timepiece.</p>
+                        <span class="view-all-link">Read more <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+                                <!-- ========================================== -->
+                            <!-- TEW CHATBOT WIDGET - FLOATING COMPONENT   -->
+                            <!-- ========================================== -->
+
+                            <!-- Chatbot Toggle Floating Button (Góc dưới bên phải) -->
+                            <div class="position-fixed bottom-0 end-0 m-3 m-md-4 z-3">
+                                <button id="tewChatbotToggleBtn" class="btn btn-emerald rounded-circle p-3 shadow-lg d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;" aria-label="Open Chatbot">
+                                    <i class="fa-solid fa-comments fs-3 text-white"></i>
+                                </button>
+                            </div>
+
+                            <!-- Chatbot Main Window Widget -->
+                            <div id="tewChatbotWindow" class="position-fixed bottom-0 end-0 m-2 m-sm-4 z-3 rounded-4 overflow-hidden shadow-lg border border-secondary border-opacity-25 d-none flex-column" style="width: 380px; max-width: calc(100vw - 20px); height: 580px; max-height: calc(100vh - 100px); background-color: #121212;">
+                                
+                                <!-- 1. Chatbot Header -->
+                                <div class="bg-brand-header p-3 text-white d-flex align-items-center justify-content-between border-bottom border-success-subtle border-opacity-10">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="position-relative">
+                                            <img src="img/logo.png" alt="TEW Logo" class="rounded-circle border border-2 border-white bg-dark p-1" style="width: 42px; height: 42px; object-fit: contain;">
+                                            <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-light rounded-circle"></span>
+                                        </div>
+                                        <div>
+                                            <h6 class="serif-font fw-bold m-0 text-white" style="font-size: 0.95rem;">Timeless Elegance Watches (TEW)</h6>
+                                            <small class="text-light opacity-75 extra-small">Online assistance</small>
+                                        </div>
+                                    </div>
+                                    <button id="tewChatbotCloseBtn" type="button" class="btn btn-link text-white p-1 opacity-75 opacity-100-hover" aria-label="Minimize Chat">
+                                        <i class="fa-solid fa-chevron-down fs-5"></i>
+                                    </button>
+                                </div>
+
+                                <!-- 2. Chatbot Messages Body (Scrollable Area) -->
+                                <div class="flex-grow-1 p-3 overflow-y-auto d-flex flex-column gap-3" style="background-color: #121212; font-size: 0.875rem;">
+                                    
+                                    <!-- Timestamp Divider -->
+                                    <div class="text-center my-1">
+                                        <span class="badge bg-transparent text-secondary extra-small fw-normal">10:35 PM</span>
+                                    </div>
+
+                                    <!-- Bot Welcome Message -->
+                                    <div class="d-flex align-items-start gap-2 max-w-85">
+                                        <img src="img/logo.png" alt="TEW" class="rounded-circle bg-dark p-1 border border-secondary border-opacity-25 mt-1" style="width: 30px; height: 30px; object-fit: contain; flex-shrink: 0;">
+                                        <div class="bg-white text-dark p-2 px-3 rounded-3 shadow-sm" style="border-top-left-radius: 2px !important;">
+                                            <span class="fw-bold d-block text-uppercase extra-small text-muted mb-1">TEW</span>
+                                            Welcome to TEW. How may we assist you today?
+                                        </div>
+                                    </div>
+
+                                    <!-- Bot Quick Suggestion Options Menu -->
+                                    <div class="d-flex align-items-start gap-2 max-w-85">
+                                        <img src="img/logo.png" alt="TEW" class="rounded-circle bg-dark p-1 border border-secondary border-opacity-25 mt-1" style="width: 30px; height: 30px; object-fit: contain; flex-shrink: 0;">
+                                        <div class="p-2 bg-dark bg-opacity-75 border border-secondary border-opacity-25 rounded-3 d-flex flex-column gap-2 w-100" style="border-top-left-radius: 2px !important;">
+                                            
+                                            <button type="button" class="btn btn-light btn-sm text-start d-flex justify-content-between align-items-center py-2 px-3 fw-medium">
+                                                <span>Explore watches</span>
+                                                <span class="badge rounded-circle p-1 bg-brand-header text-white d-flex align-items-center justify-content-center" style="width: 22px; height: 22px;">
+                                                    <i class="fa-solid fa-paper-plane extra-small"></i>
+                                                </span>
+                                            </button>
+
+                                            <button type="button" class="btn btn-light btn-sm text-start d-flex justify-content-between align-items-center py-2 px-3 fw-medium">
+                                                <span>Browse our brands</span>
+                                                <span class="badge rounded-circle p-1 bg-brand-header text-white d-flex align-items-center justify-content-center" style="width: 22px; height: 22px;">
+                                                    <i class="fa-solid fa-paper-plane extra-small"></i>
+                                                </span>
+                                            </button>
+
+                                            <button type="button" class="btn btn-light btn-sm text-start d-flex justify-content-between align-items-center py-2 px-3 fw-medium">
+                                                <span>Price & Availability</span>
+                                                <span class="badge rounded-circle p-1 bg-brand-header text-white d-flex align-items-center justify-content-center" style="width: 22px; height: 22px;">
+                                                    <i class="fa-solid fa-paper-plane extra-small"></i>
+                                                </span>
+                                            </button>
+
+                                            <button type="button" class="btn btn-light btn-sm text-start d-flex justify-content-between align-items-center py-2 px-3 fw-medium">
+                                                <span>Speak to an Expert</span>
+                                                <span class="badge rounded-circle p-1 bg-brand-header text-white d-flex align-items-center justify-content-center" style="width: 22px; height: 22px;">
+                                                    <i class="fa-solid fa-paper-plane extra-small"></i>
+                                                </span>
+                                            </button>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- User Sent Message -->
+                                    <div class="d-flex align-items-end justify-content-end gap-2 ms-auto max-w-85">
+                                    </div>
+                                </div>
+
+                                <!-- 3. Chatbot Input Bar (Footer Area) -->
+                                <div class="p-2 bg-white border-top border-secondary border-opacity-10 d-flex align-items-center gap-2">                        
+                                    <input type="text" class="form-control border-0 bg-transparent text-dark shadow-none px-1" placeholder="Type your message..." style="font-size: 0.875rem;">
+                                    <button type="button" class="btn btn-link text-secondary p-1 me-1" aria-label="Voice Input">
+                                        <i class="fa-solid fa-microphone fs-5"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-emerald rounded-circle p-2 d-flex align-items-center justify-content-center text-white" style="width: 36px; height: 36px; flex-shrink: 0;" aria-label="Send Message">
+                                        <i class="fa-solid fa-paper-plane extra-small"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <!-- CSS Bổ trợ & JS Xử lý Mở/Đóng cửa sổ Chatbot -->
+                            <style>
+                                /* Kiểu dáng riêng cho Chatbot */
+                                .bg-brand-header {
+                                    background-color: #023825 !important; /* Xanh lục đậm chuẩn TEW */
+                                }
+                                .btn-emerald {
+                                    background-color: #045237 !important;
+                                    border-color: #045237 !important;
+                                    color: #ffffff !important;
+                                }
+                                .btn-emerald:hover {
+                                    background-color: #023825 !important;
+                                }
+                                .max-w-85 {
+                                    max-width: 85%;
+                                }
+                                .extra-small {
+                                    font-size: 0.725rem;
+                                }
+                                .opacity-100-hover:hover {
+                                    opacity: 1 !important;
+                                }
+                            </style>
+
+                            
+                           
+</body>
+<!-- Footer Section -->
+<footer id="contact" class="bg-brand-footer text-white pt-5 pb-3">
+    <div class="container-xl">
+        <div class="row g-4 pb-4 align-items-start">
+            
+            <!-- Column 1: TEW logo -->
+            <div class="col-md-3 d-flex align-items-center pe-md-4">
+                <a href="index.html" aria-label="TEW home">
+                    <img src="img/logo.png" alt="TEW Logo" class="img-fluid my-auto" style="max-height: 120px;" />
+                </a>
+            </div>
+
+            <!-- Column 2: GET IN TOUCH -->
+            <div class="col-md-2" style="transform: translateX(-60px);">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">GET IN TOUCH</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small text-light mb-3">
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-globe"></i> tewwatches.com</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-location-dot"></i> Can Tho city</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-phone"></i> 09xxxxxxxx</li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-envelope"></i> tewwatches.gmail.com</li>
+                </ul>
+                <div class="d-flex gap-3 text-light fs-5" aria-label="Social media">
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
+                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-facebook"></i></span>
+                </div>
+            </div>
+
+            <!-- Column 3: SITEMAP -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">SITEMAP</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">Products</a></li>
+                    <li><a href="about us.html" class="text-white text-opacity-75 text-decoration-none">About us</a></li>
+                    <li><a href="blog.html" class="text-white text-opacity-75 text-decoration-none">Blog</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact</a></li>
+                    <li><a href="cart.html" class="text-white text-opacity-75 text-decoration-none">Cart</a></li>
+                    <li><a href="sign in.html" class="text-white text-opacity-75 text-decoration-none">Log in</a></li>
+                    <li><a href="feedback.html" class="text-white text-opacity-75 text-decoration-none">Feedback</a></li>
+                    <li><a href="chatbot.html" class="text-white text-opacity-75 text-decoration-none">Chatbot</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: COLLECTION -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">COLLECTION</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">All watches</a></li>
+                    <li><a href="index.html?brand=rolex#products" class="text-white text-opacity-75 text-decoration-none">Rolex</a></li>
+                    <li><a href="index.html?brand=omega#products" class="text-white text-opacity-75 text-decoration-none">Omega</a></li>
+                    <li><a href="index.html?brand=patek#products" class="text-white text-opacity-75 text-decoration-none">Patek Philippe</a></li>
+                    <li><a href="index.html?timepiece=featured#timepieces" class="text-white text-opacity-75 text-decoration-none">Featured watches</a></li>
+                    <li><a href="index.html?timepiece=new-arrivals#timepieces" class="text-white text-opacity-75 text-decoration-none">New arrivals</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5: CUSTOMER CARE -->
+            <div class="col-md-2">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">CUSTOMER CARE</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact Us</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Shipping &amp; Delivery</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Returns &amp; Exchanges</a></li>
+                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 6: OUR BRANDS -->
+            <div class="col-md-1 text-center text-md-start">
+                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase text-nowrap">OUR BRANDS</h5>
+                <div class="d-flex flex-column gap-2 align-items-center" style="width: 100px;">
+                    <a href="index.html?brand=rolex#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Rolex watches">
+                        <img src="img/images.png" alt="Rolex" class="img-fluid" style="max-height: 40px; transform: scale(1.2672);" />
+                    </a>
+                    <a href="index.html?brand=patek#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Patek Philippe watches">
+                        <img src="img/images1.png" alt="Patek Philippe" class="img-fluid" style="max-height: 40px; transform: scale(1.32);" />
+                    </a>
+                    <a href="index.html?brand=omega#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Omega watches">
+                        <img src="img/images2.png" alt="Omega" class="img-fluid" style="max-height: 40px; transform: scale(0.96);" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="border-top border-white border-opacity-25 pt-3 text-center text-white text-opacity-75 small">
+            <p class="m-0">&copy; 2026 TimelessEleganceWatches</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- File JavaScript Dùng Chung Cho Tất Cả Các Trang -->
+    <script src="js/common.js"></script>
+</body>
+</html>
