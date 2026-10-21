@@ -625,7 +625,7 @@
             <div class="col">
                 <article class="bg-brand-card rounded overflow-hidden border h-100 position-relative">
                     <img src="img/ảnh 11.webp" alt="Luxury watch close-up" class="w-100 h-auto d-block object-fit-cover common-article-image">
-                    <a href="post-knowledge.html" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
+                    <a href="post-watches.html?id=knowledge" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
                         <h3 class="serif-font fs-4 text-white mb-2">The Mechanics Behind a Timepiece</h3>
                         <p class="text-light small fw-light mb-3">Discover how precision gears and intricate movements work together to bring a mechanical watch to life.</p>
                         <span class="view-all-link">Read more <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
@@ -635,7 +635,7 @@
             <div class="col">
                 <article class="bg-brand-card rounded overflow-hidden border h-100 position-relative">
                     <img src="img/ảnh 12.png" alt="Classic timepiece detail" class="w-100 h-auto d-block object-fit-cover common-article-image">
-                    <a href="post-style.html" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
+                    <a href="post-watches.html?id=style" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
                         <h3 class="serif-font fs-4 text-white mb-2">A Watch as a Signature of Personal Style</h3>
                         <p class="text-light small fw-light mb-3">A watch does more than tell time. It reflects your personality, your taste, and the moments that define you.</p>
                         <span class="view-all-link">Read more <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
@@ -645,7 +645,7 @@
             <div class="col">
                 <article class="bg-brand-card rounded overflow-hidden border h-100 position-relative">
                     <img src="img/ảnh 3.jpg" alt="Luxury watch on display" class="w-100 h-auto d-block object-fit-cover common-article-image">
-                    <a href="post-care.html" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
+                    <a href="post-watches.html?id=care" class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-decoration-none">
                         <h3 class="serif-font fs-4 text-white mb-2">How to Properly Care for Your Watch</h3>
                         <p class="text-light small fw-light mb-3">Simple care habits can help preserve the beauty, performance, and longevity of your timepiece.</p>
                         <span class="view-all-link">Read more <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
@@ -881,6 +881,64 @@
 
   <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/product-data.js"></script>
+    <script>
+        const patekImageFallbacks = {
+            9: "img/1.png",
+            10: "img/2.png",
+            11: "img/3.png",
+            12: "img/4.png",
+            13: "img/5.png",
+            14: "img/6.png",
+            15: "img/7.png",
+            16: "img/8.png"
+        };
+        const productsByImage = new Map();
+
+        Object.entries(productsData).forEach(([productId, product]) => {
+            const imagePath = patekImageFallbacks[productId] || product.mainImage;
+            productsByImage.set(new URL(imagePath, window.location.href).pathname, {
+                id: productId,
+                ...product,
+                imagePath
+            });
+        });
+
+        document.querySelectorAll(
+            "[data-brand-grid] [data-brand], [data-timepiece-grid] [data-timepiece-category]"
+        ).forEach((card) => {
+            const image = card.querySelector(".common-watch-image");
+            const cardContent = card.firstElementChild;
+            const imagePath = image
+                ? new URL(image.getAttribute("src"), window.location.href).pathname
+                : "";
+            const product = productsByImage.get(imagePath);
+
+            if (!image || !cardContent || !product) {
+                throw new Error(`Unable to match a home-page product card to product data: ${imagePath || "missing image"}`);
+            }
+
+            const title = card.querySelector(".common-product-title-small");
+            const reference = card.querySelector(".common-reference-text");
+            const price = card.querySelector(".text-brand-green");
+            if (!title || !reference || !price) {
+                throw new Error(`Product card ${product.id} is missing required content`);
+            }
+
+            title.textContent = product.title;
+            reference.textContent = `Ref. ${product.reference}`;
+            price.textContent = product.price;
+            image.src = product.imagePath;
+            image.alt = `${product.collection.replace(" COLLECTION", "")} ${product.title}`;
+            image.dataset.productId = product.id;
+
+            const productLink = document.createElement("a");
+            productLink.href = `detailed%20product.html?id=${encodeURIComponent(product.id)}`;
+            productLink.className = "text-decoration-none d-block h-100";
+            card.replaceChildren(productLink);
+            productLink.append(cardContent);
+        });
+    </script>
     <!-- File JavaScript Dùng Chung Cho Tất Cả Các Trang -->
     <script src="js/common.js"></script>
 </body>

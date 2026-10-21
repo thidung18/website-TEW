@@ -81,30 +81,27 @@
     <!-- MAIN PRODUCT DETAIL SECTION -->
     <main class="py-4 py-lg-5">
         <div class="container-xl">
-            
-        
-
-            <!-- Product Showcase Section -->
+                       <!-- Product Showcase Section -->
             <section class="row g-4 g-lg-5 mb-5">
                 <!-- Left: Image Gallery -->
                 <div class="col-12 col-lg-6">
-                    <div class="d-flex flex-column-reverse flex-md-row gap-3">
-                        <!-- Thumbnails -->
-                        <div class="d-flex flex-row flex-md-column gap-2 justify-content-between">
-                            <div class="img-card img-card-small cursor-pointer border border-secondary border-opacity-25 rounded p-1" data-dial-color="Sun-brushed Blue">
-                                <img src="img/3.avif" alt="OMEGA View 1" class="img-fluid rounded">
-                            </div>
-                            <div class="img-card img-card-small cursor-pointer border border-secondary border-opacity-25 rounded p-1" data-dial-color="Black">
-                                <img src="img/5.avif" alt="OMEGA View 2" class="img-fluid rounded">
-                            </div>
-                            <div class="img-card img-card-small cursor-pointer border border-secondary border-opacity-25 rounded p-1" data-dial-color="Silver">
-                                <img src="img/22.jpg" alt="OMEGA View 3" class="img-fluid rounded">
-                            </div>
+                    <div class="d-flex flex-column-reverse flex-md-row gap-3 product-image-gallery">
+                        <!-- Thumbnails Container -->
+                        <div class="d-flex flex-row flex-md-column gap-2 justify-content-between" id="productThumbnails">
+                            <button class="img-card img-card-small product-thumbnail cursor-pointer border border-secondary border-opacity-25 rounded" type="button" aria-label="View 1" aria-pressed="true">
+                                <img src="img/rolex1.png" alt="View 1" class="img-fluid rounded">
+                            </button>
+                            <button class="img-card img-card-small product-thumbnail cursor-pointer border border-secondary border-opacity-25 rounded" type="button" aria-label="View 2" aria-pressed="false">
+                                <img src="img/rolex2.png" alt="View 2" class="img-fluid rounded">
+                            </button>
+                            <button class="img-card img-card-small product-thumbnail cursor-pointer border border-secondary border-opacity-25 rounded" type="button" aria-label="View 3" aria-pressed="false">
+                                <img src="img/rolex3.png" alt="View 3" class="img-fluid rounded">
+                            </button>
                         </div>
                         <!-- Featured Main Image -->
-                        <div class="flex-grow-1">
+                        <div class="flex-grow-1 main-product-image-column">
                             <div class="img-card img-card-large p-3 border border-secondary border-opacity-25 rounded bg-dark bg-opacity-10 text-center">
-                                <img src="img/3.png" alt="OMEGA Watch Blue Dial Main" class="img-fluid main-watch-image">
+                                <img src="img/rolex1.png" alt="Watch Main View" class="img-fluid main-watch-image" id="mainProductImg">
                             </div>
                         </div>
                     </div>
@@ -112,8 +109,8 @@
 
                 <!-- Right: Product Purchase Info -->
                 <div class="col-12 col-lg-6">
-                    <span class="text-uppercase tracking-wider small fw-semibold text-secondary">Omega Collection</span>
-                    <h1 class="serif-font product-section-title mt-1 mb-2">Aqua Terra 150M Co-Axial Master Chronometer</h1>
+                    <span class="text-uppercase tracking-wider small fw-semibold text-secondary" id="productCollection">ROLEX COLLECTION</span>
+                    <h1 class="serif-font product-section-title mt-1 mb-2" id="productTitle">Datejust 36</h1>
                     
                     <!-- Rating & Reviews -->
                     <div class="d-flex align-items-center gap-2 mb-3">
@@ -124,18 +121,18 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <span class="small text-secondary">(4.8 / 5.0 - 24 Reviews)</span>
+                        <span class="small text-secondary" id="productRating">(4.8 / 5.0 - 24 Reviews)</span>
                     </div>
 
                     <!-- Price -->
                     <div class="mb-4">
-                        <span class="fs-2 fw-bold text-white">$6,400.00</span>
-                        <span class="text-secondary text-decoration-line-through ms-2 small">$6,800.00</span>
+                        <span class="fs-2 fw-bold text-white" id="productPrice">$10,100.00</span>
+                        <span class="text-secondary text-decoration-line-through ms-2 small" id="productOldPrice"></span>
                     </div>
 
                     <!-- Short Description -->
-                    <p class="product-desc mb-4">
-                        Omega has long affirmed its status as a global icon of absolute precision and luxurious design. Featuring a sun-brushed blue dial with rhodium-plated hands and markers filled with white Super-LumiNova, embodying a sophisticated spirit with captivating depth.
+                    <p class="product-desc mb-4" id="productDesc">
+                        The Rolex Datejust 36 embodies timeless elegance and precision...
                     </p>
 
                     <!-- Purchase Options -->
@@ -147,23 +144,12 @@
                         </div>
                     </div>
 
-                    <fieldset class="mb-4">
-                        <legend class="form-label text-light fw-medium mb-2 fs-6">Dial Color:</legend>
-                        <div class="d-flex gap-2">
-                            <input class="btn-check dial-color-option" type="radio" name="dialColor" id="dialColorBlue" value="Sun-brushed Blue" checked>
-                            <label class="btn btn-outline-light btn-sm px-3" for="dialColorBlue">Blue</label>
-                            <input class="btn-check dial-color-option" type="radio" name="dialColor" id="dialColorBlack" value="Black">
-                            <label class="btn btn-outline-light btn-sm px-3" for="dialColorBlack">Black</label>
-                            <input class="btn-check dial-color-option" type="radio" name="dialColor" id="dialColorSilver" value="Silver">
-                            <label class="btn btn-outline-light btn-sm px-3" for="dialColorSilver">Silver</label>
-                        </div>
-                    </fieldset>
-
                     <!-- Action Buttons -->
                     <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
-                        <a href="cart.html" class="btn btn-buy-now px-4 flex-grow-1 flex-md-grow-0">Add to Cart</a>
-                        <a href="cart.html" class="btn btn-outline-light px-4 flex-grow-1 flex-md-grow-0">Buy Now</a>
+                        <button type="button" class="btn btn-buy-now px-4 flex-grow-1 flex-md-grow-0" data-add-to-cart>Add to Cart</button>
+                        <button type="button" class="btn btn-outline-light px-4 flex-grow-1 flex-md-grow-0" data-add-to-cart data-buy-now>Buy Now</button>
                     </div>
+                    <p id="cart-add-feedback" class="text-brand-green small mb-4" role="status" aria-live="polite"></p>
 
                     <!-- Service Badges -->
                     <div class="border-top border-secondary border-opacity-25 pt-4 d-flex flex-column gap-2 small text-secondary">
@@ -171,7 +157,7 @@
                             <i class="fa-solid fa-truck-fast text-light"></i> Free Global Shipping & Insurance
                         </div>
                         <div class="d-flex align-items-center gap-2">
-                            <i class="fa-solid fa-shield-halved text-light"></i> 5-Year OMEGA International Warranty
+                            <i class="fa-solid fa-shield-halved text-light"></i> 5-Year International Warranty
                         </div>
                         <div class="d-flex align-items-center gap-2">
                             <i class="fa-solid fa-rotate-left text-light"></i> 14 Days Return Policy
@@ -188,35 +174,35 @@
                     <div class="col-12 col-md-6">
                         <h2 class="serif-font h2 mb-3">Mastery of Precision</h2>
                         <p class="product-desc">
-                            Inside this timepiece lies a revolutionary movement engineered to meet the highest standards of luxury performance. From the Co-Axial escapement ensuring long-lasting precision, to the silicon balance spring offering superior anti-magnetic protection, OMEGA has mastered every defining challenge of modern watchmaking.
+                            Inside this timepiece lies a revolutionary movement engineered to meet the highest standards of luxury performance. Designed for durability and absolute precision.
                         </p>
                         <p class="product-desc">
-                            Far from a conventional shade, Omega's blue is a masterpiece of advanced finishing technology. Through meticulous Sun-brushed techniques and premium PVD coating, the dial dynamically shifts tones under changing light.
+                            Every curve and finish is crafted using cutting-edge technology, offering dynamic reflections under light.
                         </p>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="img-card img-card-large product-feature-image-card p-2">
-                            <img src="img/matxanh.png" alt="OMEGA Blue Dial Advantage" class="img-fluid rounded">
+                            <img src="img/mattrang.png" alt="Feature Advantage" class="img-fluid rounded" id="featureImg">
                         </div>
                     </div>
                 </div>
 
                 <div class="py-3">
                     <h2 class="serif-font h2 mb-4">A Closer Look</h2>
-                    <div class="row g-4">
+                    <div class="row g-4" id="galleryContainer">
                         <div class="col-12 col-md-4">
                             <figure class="img-card p-2 h-100">
-                                <img src="img/omega1.png" alt="Close-up of the OMEGA Co-Axial watch dial" class="img-fluid rounded product-detail-gallery-image">
+                                <img src="img/rolex1.png" alt="Detail 1" class="img-fluid rounded product-detail-gallery-image">
                             </figure>
                         </div>
                         <div class="col-12 col-md-4">
                             <figure class="img-card p-2 h-100">
-                                <img src="img/matxanh.png" alt="Blue dial detail of the OMEGA watch" class="img-fluid rounded product-detail-gallery-image">
+                                <img src="img/mattrang.png" alt="Detail 2" class="img-fluid rounded product-detail-gallery-image">
                             </figure>
                         </div>
                         <div class="col-12 col-md-4">
                             <figure class="img-card p-2 h-100">
-                                <img src="img/taydeodh.png" alt="OMEGA watch worn on the wrist" class="img-fluid rounded product-detail-gallery-image">
+                                <img src="img/taydeodh.png" alt="Detail 3" class="img-fluid rounded product-detail-gallery-image">
                             </figure>
                         </div>
                     </div>
@@ -232,35 +218,35 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row" class="text-secondary w-35">Product Reference:</th>
-                                        <td>220.10.41.21.03.001</td>
+                                        <td id="specRef">126234</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-secondary w-35">Between Lugs:</th>
-                                        <td>20 mm</td>
+                                        <td id="specLugs">20 mm</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-secondary">Case Diameter:</th>
-                                        <td id="caseDiameterSpecification">41 mm</td>
+                                        <td id="caseDiameterSpecification">36 mm</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-secondary">Case Material:</th>
-                                        <td>Steel</td>
+                                        <td id="specMaterial">Oystersteel and white gold</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-secondary">Dial Color:</th>
-                                        <td id="dialColorSpecification">Sun-brushed Blue</td>
+                                        <td id="dialColorSpecification">White</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-secondary">Crystal:</th>
-                                        <td>Domed scratch-resistant sapphire crystal with anti-reflective treatment</td>
+                                        <td id="specCrystal">Scratch-resistant sapphire crystal</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-secondary">Water Resistance:</th>
-                                        <td>15 bar (150 metres / 500 feet)</td>
+                                        <td id="specWater">10 bar (100 metres / 330 feet)</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-secondary">Movement Type:</th>
-                                        <td>Self-winding (Calibre Omega 8900)</td>
+                                        <td id="specMovement">Self-winding (Calibre Rolex 3235)</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -272,100 +258,191 @@
         </div>
     </main>
 
-<!-- 8. Footer Section -->
+    <!-- Footer Section -->
     <footer id="contact" class="bg-brand-footer text-white pt-5 pb-3">
-    <div class="container-xl">
-        <div class="row g-4 pb-4 align-items-start">
-            
-            <!-- Column 1: TEW logo -->
-            <div class="col-md-3 d-flex align-items-center pe-md-4">
-                <a href="index.html" aria-label="TEW home">
-                    <img src="img/logo.png" alt="TEW Logo" class="img-fluid my-auto" style="max-height: 120px;" />
-                </a>
-            </div>
-
-            <!-- Column 2: GET IN TOUCH -->
-            <div class="col-md-2" style="transform: translateX(0px);">
-                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">GET IN TOUCH</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 small text-light mb-3">
-                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-globe"></i> tewwatches.com</li>
-                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-location-dot"></i> Can Tho city</li>
-                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-phone"></i> 09xxxxxxxx</li>
-                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-envelope"></i> tewwatches.gmail.com</li>
-                </ul>
-                <div class="d-flex gap-3 text-light fs-5" aria-label="Social media">
-                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
-                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
-                    <span class="text-white" aria-hidden="true"><i class="fa-brands fa-facebook"></i></span>
-                </div>
-            </div>
-
-            <!-- Column 3: SITEMAP -->
-            <div class="col-md-2">
-                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">SITEMAP</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 small">
-                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">Products</a></li>
-                    <li><a href="about us.html" class="text-white text-opacity-75 text-decoration-none">About us</a></li>
-                    <li><a href="blog.html" class="text-white text-opacity-75 text-decoration-none">Blog</a></li>
-                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact</a></li>
-                    <li><a href="cart.html" class="text-white text-opacity-75 text-decoration-none">Cart</a></li>
-                    <li><a href="sign in.html" class="text-white text-opacity-75 text-decoration-none">Log in</a></li>
-                    <li><a href="feedback.html" class="text-white text-opacity-75 text-decoration-none">Feedback</a></li>
-                    <li><a href="chatbot.html" class="text-white text-opacity-75 text-decoration-none">Chatbot</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: COLLECTION -->
-            <div class="col-md-2">
-                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">COLLECTION</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 small">
-                    <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">All watches</a></li>
-                    <li><a href="index.html?brand=rolex#products" class="text-white text-opacity-75 text-decoration-none">Rolex</a></li>
-                    <li><a href="index.html?brand=omega#products" class="text-white text-opacity-75 text-decoration-none">Omega</a></li>
-                    <li><a href="index.html?brand=patek#products" class="text-white text-opacity-75 text-decoration-none">Patek Philippe</a></li>
-                    <li><a href="index.html?timepiece=featured#timepieces" class="text-white text-opacity-75 text-decoration-none">Featured watches</a></li>
-                    <li><a href="index.html?timepiece=new-arrivals#timepieces" class="text-white text-opacity-75 text-decoration-none">New arrivals</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 5: CUSTOMER CARE -->
-            <div class="col-md-2">
-                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">CUSTOMER CARE</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 small">
-                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact Us</a></li>
-                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Shipping &amp; Delivery</a></li>
-                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Returns &amp; Exchanges</a></li>
-                    <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">FAQ</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 6: OUR BRANDS -->
-            <div class="col-md-1 text-center text-md-start">
-                <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase text-nowrap">OUR BRANDS</h5>
-                <div class="d-flex flex-column gap-2 align-items-center" style="width: 100px;">
-                    <a href="index.html?brand=rolex#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Rolex watches">
-                        <img src="img/images.png" alt="Rolex" class="img-fluid" style="max-height: 40px; transform: scale(1.2672);" />
-                    </a>
-                    <a href="index.html?brand=patek#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Patek Philippe watches">
-                        <img src="img/images1.png" alt="Patek Philippe" class="img-fluid" style="max-height: 40px; transform: scale(1.32);" />
-                    </a>
-                    <a href="index.html?brand=omega#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Omega watches">
-                        <img src="img/images2.png" alt="Omega" class="img-fluid" style="max-height: 40px; transform: scale(0.96);" />
+        <div class="container-xl">
+            <div class="row g-4 pb-4 align-items-start">
+                
+                <!-- Column 1: TEW logo -->
+                <div class="col-md-3 d-flex align-items-center pe-md-4">
+                    <a href="index.html" aria-label="TEW home">
+                        <img src="img/logo.png" alt="TEW Logo" class="img-fluid my-auto" style="max-height: 120px;" />
                     </a>
                 </div>
+
+                <!-- Column 2: GET IN TOUCH -->
+                <div class="col-md-2">
+                    <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">GET IN TOUCH</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small text-light mb-3">
+                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-globe"></i> tewwatches.com</li>
+                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-location-dot"></i> Can Tho city</li>
+                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-phone"></i> 09xxxxxxxx</li>
+                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-envelope"></i> tewwatches.gmail.com</li>
+                    </ul>
+                    <div class="d-flex gap-3 text-light fs-5" aria-label="Social media">
+                        <span class="text-white" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
+                        <span class="text-white" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
+                        <span class="text-white" aria-hidden="true"><i class="fa-brands fa-facebook"></i></span>
+                    </div>
+                </div>
+
+                <!-- Column 3: SITEMAP -->
+                <div class="col-md-2">
+                    <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">SITEMAP</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">Products</a></li>
+                        <li><a href="about us.html" class="text-white text-opacity-75 text-decoration-none">About us</a></li>
+                        <li><a href="blog.html" class="text-white text-opacity-75 text-decoration-none">Blog</a></li>
+                        <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact</a></li>
+                        <li><a href="cart.html" class="text-white text-opacity-75 text-decoration-none">Cart</a></li>
+                        <li><a href="sign in.html" class="text-white text-opacity-75 text-decoration-none">Log in</a></li>
+                        <li><a href="feedback.html" class="text-white text-opacity-75 text-decoration-none">Feedback</a></li>
+                        <li><a href="chatbot.html" class="text-white text-opacity-75 text-decoration-none">Chatbot</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: COLLECTION -->
+                <div class="col-md-2">
+                    <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">COLLECTION</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="product.html" class="text-white text-opacity-75 text-decoration-none">All watches</a></li>
+                        <li><a href="index.html?brand=rolex#products" class="text-white text-opacity-75 text-decoration-none">Rolex</a></li>
+                        <li><a href="index.html?brand=omega#products" class="text-white text-opacity-75 text-decoration-none">Omega</a></li>
+                        <li><a href="index.html?brand=patek#products" class="text-white text-opacity-75 text-decoration-none">Patek Philippe</a></li>
+                        <li><a href="index.html?timepiece=featured#timepieces" class="text-white text-opacity-75 text-decoration-none">Featured watches</a></li>
+                        <li><a href="index.html?timepiece=new-arrivals#timepieces" class="text-white text-opacity-75 text-decoration-none">New arrivals</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 5: CUSTOMER CARE -->
+                <div class="col-md-2">
+                    <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase">CUSTOMER CARE</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact Us</a></li>
+                        <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Shipping &amp; Delivery</a></li>
+                        <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Returns &amp; Exchanges</a></li>
+                        <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 6: OUR BRANDS -->
+                <div class="col-md-1 text-center text-md-start">
+                    <h5 class="fw-bold fs-6 mb-3 text-white text-uppercase text-nowrap">OUR BRANDS</h5>
+                    <div class="d-flex flex-column gap-2 align-items-center" style="width: 100px;">
+                        <a href="index.html?brand=rolex#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Rolex watches">
+                            <img src="img/images.png" alt="Rolex" class="img-fluid" style="max-height: 40px; transform: scale(1.2672);" />
+                        </a>
+                        <a href="index.html?brand=patek#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Patek Philippe watches">
+                            <img src="img/images1.png" alt="Patek Philippe" class="img-fluid" style="max-height: 40px; transform: scale(1.32);" />
+                        </a>
+                        <a href="index.html?brand=omega#products" class="bg-white rounded p-1 w-100 d-flex align-items-center justify-content-center" aria-label="View Omega watches">
+                            <img src="img/images2.png" alt="Omega" class="img-fluid" style="max-height: 40px; transform: scale(0.96);" />
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
+            <!-- Copyright Bar -->
+            <div class="border-top border-white border-opacity-25 pt-3 text-center text-white text-opacity-75 small">
+                <p class="m-0">&copy; 2026 TimelessEleganceWatches</p>
+            </div>
         </div>
+    </footer>
 
-        <!-- Copyright Bar -->
-        <div class="border-top border-white border-opacity-25 pt-3 text-center text-white text-opacity-75 small">
-            <p class="m-0">&copy; 2026 TimelessEleganceWatches</p>
-        </div>
-    </div>
-</footer>
-<!-- Bootstrap JS Bundle -->
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- File JavaScript Dùng Chung Cho Tất Cả Các Trang -->
+
+    <!-- 1. Nhúng file dữ liệu sản phẩm -->
+    <script src="js/product-data.js"></script>
+
+    <!-- 2. Script xử lý đọc ID trên URL và tự động đổ dữ liệu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id') || '1';
+
+            if (typeof productsData !== 'undefined' && productsData[productId]) {
+                const product = productsData[productId];
+
+                // Cập nhật thông tin chữ
+                if (document.getElementById('productCollection')) document.getElementById('productCollection').textContent = product.collection || '';
+                if (document.getElementById('productTitle')) document.getElementById('productTitle').textContent = product.title || '';
+                if (document.getElementById('productRating')) document.getElementById('productRating').textContent = `(${product.rating || ''})`;
+                if (document.getElementById('productPrice')) document.getElementById('productPrice').textContent = product.price || '';
+                if (document.getElementById('productOldPrice')) document.getElementById('productOldPrice').textContent = product.oldPrice || '';
+                if (document.getElementById('productDesc')) document.getElementById('productDesc').textContent = product.description || '';
+
+                // Cập nhật ảnh chính
+                const mainImg = document.getElementById('mainProductImg');
+                if (mainImg && product.mainImage) {
+                    mainImg.src = product.mainImage;
+                    mainImg.alt = product.title || 'Watch Main View';
+                    mainImg.classList.toggle('is-supplementary-image', product.mainImage.includes('/anhphu/'));
+                }
+
+                // Cập nhật Thumbnails
+                const thumbContainer = document.getElementById('productThumbnails');
+                if (thumbContainer && product.thumbnails && product.thumbnails.length > 0) {
+                    thumbContainer.innerHTML = product.thumbnails.map((imgSrc, index) => `
+                        <button
+                            class="img-card img-card-small product-thumbnail cursor-pointer border border-secondary border-opacity-25 rounded"
+                            type="button"
+                            data-thumbnail-src="${imgSrc}"
+                            aria-label="View ${index + 1}"
+                            aria-pressed="${imgSrc === product.mainImage}"
+                        >
+                            <img src="${imgSrc}" alt="" class="img-fluid rounded" aria-hidden="true">
+                        </button>
+                    `).join('');
+
+                    thumbContainer.addEventListener('click', (event) => {
+                        const thumbnailButton = event.target.closest('button[data-thumbnail-src]');
+                        if (!thumbnailButton || !thumbContainer.contains(thumbnailButton) || !mainImg) return;
+
+                        mainImg.src = thumbnailButton.dataset.thumbnailSrc;
+                        mainImg.alt = `${product.title} - ${thumbnailButton.getAttribute('aria-label')}`;
+                        mainImg.classList.toggle('is-supplementary-image', thumbnailButton.dataset.thumbnailSrc.includes('/anhphu/'));
+                        thumbContainer.querySelectorAll('button[data-thumbnail-src]').forEach((button) => {
+                            button.setAttribute('aria-pressed', String(button === thumbnailButton));
+                        });
+                    });
+                }
+
+                // Cập nhật ảnh tính năng & Gallery
+                const featureImg = document.getElementById('featureImg');
+                if (featureImg && product.featureImage) {
+                    featureImg.src = product.featureImage;
+                }
+
+                const galleryContainer = document.getElementById('galleryContainer');
+                if (galleryContainer && product.galleryImages && product.galleryImages.length > 0) {
+                    galleryContainer.innerHTML = product.galleryImages.map((imgSrc, index) => `
+                        <div class="col-12 col-md-4">
+                            <figure class="img-card p-2 h-100">
+                                <img src="${imgSrc}" alt="Detail ${index + 1}" class="img-fluid rounded product-detail-gallery-image">
+                            </figure>
+                        </div>
+                    `).join('');
+                }
+
+                // Cập nhật thông số kỹ thuật
+                if (document.getElementById('specRef')) document.getElementById('specRef').textContent = product.reference || '';
+                if (document.getElementById('specLugs')) document.getElementById('specLugs').textContent = product.betweenLugs || '';
+                if (document.getElementById('caseDiameterSpecification')) document.getElementById('caseDiameterSpecification').textContent = product.caseDiameter || '';
+                if (document.getElementById('specMaterial')) document.getElementById('specMaterial').textContent = product.caseMaterial || '';
+                if (document.getElementById('dialColorSpecification')) document.getElementById('dialColorSpecification').textContent = product.dialColor || '';
+                if (document.getElementById('specCrystal')) document.getElementById('specCrystal').textContent = product.crystal || '';
+                if (document.getElementById('specWater')) document.getElementById('specWater').textContent = product.waterResistance || '';
+                if (document.getElementById('specMovement')) document.getElementById('specMovement').textContent = product.movement || '';
+            } else {
+                console.warn(`Không tìm thấy sản phẩm có ID: ${productId}`);
+            }
+        });
+    </script>
+    <script src="js/cart.js"></script>
+
+    <!-- 3. File common.js dùng chung -->
     <script src="js/common.js"></script>
 </body>
 </html>

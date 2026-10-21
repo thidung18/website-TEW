@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const selectedBrand = filter.dataset.brandFilter;
 
                 brandCards.forEach((card) => {
-                    const isMatch = card.dataset.brand === selectedBrand;
+                    const isMatch = selectedBrand === "all" || card.dataset.brand === selectedBrand;
                     if (isMatch) {
                         card.classList.remove("d-none");
                         setTimeout(() => card.classList.add("tew-active"), 50);

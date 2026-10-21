@@ -478,7 +478,21 @@ footer .serif-font {
 }
 
 .page-product-detail .main-watch-image {
-    max-height: 520px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    max-height: none;
+    object-fit: contain;
+}
+
+.page-product-detail .main-product-image-column {
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.page-product-detail .main-watch-image.is-supplementary-image {
+    object-fit: cover;
 }
 
 .page-product-detail .product-feature-image-card {
@@ -501,10 +515,50 @@ footer .serif-font {
     padding: 1rem;
 }
 
+.product-thumbnail {
+    appearance: none;
+    cursor: pointer;
+    flex: 0 0 4rem;
+    padding: 0.25rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.page-product-detail #productThumbnails {
+    align-self: flex-start;
+    flex: 0 0 4rem;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    justify-content: flex-start !important;
+    width: 4rem;
+}
+
+.product-thumbnail[aria-pressed="true"] {
+    --bs-border-opacity: 1;
+    border-color: var(--brand-green) !important;
+}
+
+.product-thumbnail:focus-visible {
+    outline: 2px solid var(--brand-green);
+    outline-offset: 2px;
+}
+
 .img-card-small img {
     max-width: 100%;
     max-height: 150px;
     object-fit: contain;
+}
+
+@media (max-width: 767.98px) {
+    .page-product-detail .product-image-gallery {
+        flex-direction: row !important;
+        align-items: flex-start;
+        gap: 0.5rem !important;
+    }
+
+    .page-product-detail #productThumbnails {
+        flex-basis: 4rem;
+    }
 }
 
 .product-section-title {
@@ -595,6 +649,7 @@ footer .serif-font {
     }
 }
 
+
 /* ==========================================================================
    8. HERO SECTION & CÁC LỚP TIỆN ÍCH DÙNG CHUNG KHÁC
    ========================================================================== */
@@ -612,7 +667,8 @@ footer .serif-font {
 }
 
 .page-product .hero-section {
-    height: clamp(450px, 45.14vw, 650px);
+    height: auto;
+    aspect-ratio: 2.2 / 1;
 }
 
 .hero-cover {
@@ -626,6 +682,13 @@ footer .serif-font {
 
 .page-product .hero-cover {
     filter: none;
+    inset: auto;
+    top: -21%;
+    left: -4.6%;
+    width: 128%;
+    max-width: none;
+    height: 154%;
+    object-fit: fill;
 }
 
 .hero-overlay {
@@ -685,6 +748,10 @@ footer .serif-font {
     overflow: visible;
 }
 
+.page-product [data-brand-grid] .common-watch-frame {
+    overflow: hidden;
+}
+
 .common-watch-image {
     width: auto;
     max-width: 100%;
@@ -693,9 +760,118 @@ footer .serif-font {
     object-fit: contain;
 }
 
+.page-product .common-watch-image[data-product-id="25"] {
+    max-height: 320px;
+}
+
+.page-product .common-watch-image[data-product-id="26"] {
+    max-height: 320px;
+    transform: translateY(-10px);
+}
+
+.page-product .common-watch-image[data-product-id="27"] {
+    max-height: 300px;
+    transform: translateY(5px);
+}
+
+.page-product .common-watch-image[data-product-id="28"] {
+    max-height: 320px;
+    transform: translateY(-10px);
+}
+
+.page-product .common-watch-image[data-product-id="30"],
+.page-product .common-watch-image[data-product-id="31"] {
+    max-height: 240px;
+}
+
+.page-product .common-watch-image[data-product-id="29"],
+.page-product .common-watch-image[data-product-id="32"] {
+    max-height: 290px;
+    transform: translateY(5px);
+}
+
 .page-product [data-blog-grid] [data-blog-category="new-arrivals"] .common-watch-image,
 .page-product [data-blog-grid] [data-blog-category="bestseller"] .common-watch-image {
     max-height: 260px;
+}
+
+.page-product .common-watch-image[data-product-id="41"],
+.page-product .common-watch-image[data-product-id="42"],
+.page-product .common-watch-image[data-product-id="43"],
+.page-product .common-watch-image[data-product-id="44"],
+.page-product .common-watch-image[data-product-id="45"],
+.page-product .common-watch-image[data-product-id="46"],
+.page-product .common-watch-image[data-product-id="47"],
+.page-product .common-watch-image[data-product-id="48"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="41"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="42"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="43"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="44"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="45"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="46"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="47"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="48"] {
+    max-height: 320px;
+}
+
+.page-product .common-watch-image[data-product-id="47"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="47"] {
+    max-height: 300px;
+    transform: translateY(-10px);
+}
+
+.page-product .common-watch-image[data-product-id="42"],
+.page-product .common-watch-image[data-product-id="46"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="42"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="46"] {
+    max-height: 300px;
+}
+
+.page-product .common-watch-image[data-product-id="43"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="43"] {
+    max-height: 290px;
+}
+
+.page-product .common-watch-image[data-product-id="35"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="35"] {
+    max-height: 240px;
+}
+
+.page-product .common-watch-image[data-product-id="33"],
+.page-product .common-watch-image[data-product-id="37"],
+.page-product .common-watch-image[data-product-id="39"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="33"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="37"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="39"] {
+    max-height: 250px;
+}
+
+.page-product .common-watch-image[data-product-id="36"],
+.page-product .common-watch-image[data-product-id="40"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="36"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="40"] {
+    max-height: 250px;
+}
+
+.page-product .common-watch-image[data-product-id="41"],
+.page-product .common-watch-image[data-product-id="45"],
+.page-product .common-watch-image[data-product-id="48"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="41"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="45"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="48"] {
+    max-height: 280px;
+}
+
+.page-product .common-watch-image[data-product-id="46"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="46"] {
+    transform: translateY(-5px);
+}
+
+.page-product .common-watch-image[data-product-id="45"],
+.page-product .common-watch-image[data-product-id="48"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="45"],
+.page-product [data-blog-grid] .common-watch-image[data-product-id="48"] {
+    transform: translateY(-10px);
 }
 
 /* Utility Layout Modifiers */
@@ -799,6 +975,27 @@ footer .serif-font {
 
 .page-pay .order-summary-item-actions {
     flex-shrink: 0;
+}
+
+.page-cart .cart-item-controls {
+    position: relative;
+}
+
+.page-cart .cart-quantity-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 576px) {
+    .page-cart .cart-item-row {
+        position: relative;
+    }
+
+    .page-cart .cart-item-controls {
+        position: static;
+    }
 }
 
 @media (min-width: 992px) {

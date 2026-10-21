@@ -99,7 +99,8 @@
                                 </div>
                                 <div>
                                     <label for="emailAddress" class="form-label text-light small fw-medium">Email Address</label>
-                                    <input type="email" class="form-control bg-dark border-secondary border-opacity-50 text-white shadow-none placeholder-secondary py-2" id="emailAddress" placeholder="example@domain.com" required>
+                                    <input type="email" class="form-control bg-dark border-secondary border-opacity-50 text-white shadow-none placeholder-secondary py-2" id="emailAddress" aria-describedby="emailAddressFeedback" placeholder="example@domain.com" required>
+                                    <div id="emailAddressFeedback" class="invalid-feedback text-danger fw-semibold" aria-live="polite"></div>
                                 </div>
                                 <div>
                                     <label for="subject" class="form-label text-light small fw-medium">Subject</label>
@@ -281,6 +282,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/contact.js"></script>
     <!-- File JavaScript Dùng Chung Cho Tất Cả Các Trang -->
     <script src="js/common.js"></script>
 </body>
