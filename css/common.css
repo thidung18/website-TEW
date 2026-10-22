@@ -901,6 +901,11 @@ footer .serif-font {
     line-height: 1.15;
 }
 @media (max-width: 767.98px) {
+    footer .col-md-1.text-center.text-md-start > h2,
+    footer .col-md-1.text-center.text-md-start > h5 {
+        text-align: left !important;
+    }
+
     .page-home #home .common-content-width-580,
     .page-about .hero-content,
     .page-feedback .common-feedback-header-content,
