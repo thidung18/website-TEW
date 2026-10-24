@@ -574,4 +574,254 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+
+    const searchButtons = document.querySelectorAll('button[aria-label="Search"]');
+    if (searchButtons.length > 0) {
+        const searchOverlay = document.createElement("div");
+        searchOverlay.className = "tew-search-overlay";
+        searchOverlay.hidden = true;
+        searchOverlay.innerHTML = `
+            <section class="tew-search-dialog" role="dialog" aria-modal="true" aria-labelledby="tewSearchTitle">
+                <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                    <h2 id="tewSearchTitle" class="serif-font fs-4 text-brand-green m-0">Search watches</h2>
+                    <button type="button" class="btn btn-link text-white p-1" data-search-close aria-label="Close search">
+                        <i class="fa-solid fa-xmark fs-4" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <label class="visually-hidden" for="tewSearchInput">Search products, pages, and articles</label>
+                <input id="tewSearchInput" class="form-control bg-dark text-white border-secondary" type="search" autocomplete="off" placeholder="Search watches, pages, features, and articles">
+                <div id="tewSearchResults" class="tew-search-results mt-3" aria-live="polite">
+                    <p class="text-secondary mb-0">Enter a watch name, brand, or reference to search.</p>
+                </div>
+            </section>`;
+        document.body.appendChild(searchOverlay);
+
+        const searchInput = searchOverlay.querySelector("#tewSearchInput");
+        const searchResults = searchOverlay.querySelector("#tewSearchResults");
+        let productDataPromise;
+        const searchablePages = [
+            { title: "Home", category: "Page", href: "index.html", keywords: "home homepage main featured new arrivals" },
+            { title: "Products", category: "Page", href: "product.html", keywords: "products watches shop collection browse rolex omega patek" },
+            { title: "All Watches", category: "Page", href: "product-all.html", keywords: "all watches products full collection brand rolex omega patek" },
+            { title: "About Us", category: "Page", href: "about%20us.html", keywords: "about us story company store timeless elegance" },
+            { title: "Blog", category: "Page", href: "blog.html", keywords: "blog articles stories watch style care knowledge" },
+            { title: "Contact Us", category: "Page", href: "contact.html", keywords: "contact support help email phone address inquiry message shipping delivery returns warranty" },
+            { title: "Feedback", category: "Page", href: "feedback.html", keywords: "feedback review rating submit opinion experience" },
+            { title: "Customer Reviews", category: "Page", href: "feedback1.html", keywords: "customer reviews testimonials ratings feedback" },
+            { title: "Shopping Cart", category: "Feature", href: "cart.html", keywords: "cart shopping bag basket add remove select quantity checkout" },
+            { title: "Checkout and Payment", category: "Feature", href: "cart.html", keywords: "checkout payment order shipping delivery credit card wallet cash" },
+            { title: "Add to Cart and Buy Now", category: "Feature", href: "product-all.html", keywords: "add to cart buy now quick purchase product buttons" },
+            { title: "Shipping and Delivery", category: "Service", href: "contact.html", keywords: "shipping delivery free express global order tracking" },
+            { title: "Returns and Exchanges", category: "Service", href: "contact.html", keywords: "returns exchanges refund return policy" },
+            { title: "Warranty", category: "Service", href: "contact.html", keywords: "warranty guarantee repair service" },
+            { title: "Sign In", category: "Feature", href: "sign%20in.html", keywords: "sign in log in account member password" },
+            { title: "Sign Up", category: "Feature", href: "sign%20up.html", keywords: "sign up register registration create account member" }
+        ];
+        const searchableArticles = [
+            {
+                id: "watches",
+                title: "The Mechanics Behind a Timepiece",
+                category: "Watches",
+                keywords: "mechanics mechanical movement gears precision timepiece"
+            },
+            {
+                id: "style",
+                title: "A Watch as a Signature of Personal Style",
+                category: "Style",
+                keywords: "personal style fashion design outfit elegance"
+            },
+            {
+                id: "care",
+                title: "How to Properly Care for Your Watch",
+                category: "Care",
+                keywords: "care maintenance clean preserve service strap"
+            },
+            {
+                id: "knowledge",
+                title: "5 Things to Know Before Choosing a Watch",
+                category: "Knowledge",
+                keywords: "choose choosing guide materials movement size"
+            },
+            {
+                id: "tew-stories",
+                title: "The Art of Measuring Time",
+                category: "TEW Stories",
+                keywords: "time measuring history craftsmanship"
+            }
+        ];
+
+        function loadProductData() {
+            if (typeof productsData !== "undefined") return Promise.resolve(productsData);
+            if (!productDataPromise) {
+                productDataPromise = new Promise((resolve, reject) => {
+                    const script = document.createElement("script");
+                    script.src = "js/product-data.js";
+                    script.onload = () => {
+                        if (typeof productsData === "undefined") {
+                            reject(new Error("Product search data did not load."));
+                            return;
+                        }
+                        resolve(productsData);
+                    };
+                    script.onerror = () => reject(new Error("Unable to load product search data."));
+                    document.body.appendChild(script);
+                });
+            }
+            return productDataPromise;
+        }
+
+        function normalizeSearchText(text) {
+            return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
+        }
+
+        function renderSearchResults(products, query) {
+            searchResults.replaceChildren();
+            if (!query) {
+                const hint = document.createElement("p");
+                hint.className = "text-secondary mb-0";
+                hint.textContent = "Search watches, product details, pages, website features, or blog articles.";
+                searchResults.appendChild(hint);
+                return;
+            }
+
+            const normalizedQuery = normalizeSearchText(query);
+            const productMatches = Object.entries(products)
+                .filter(([, product]) => normalizeSearchText([
+                    product.title,
+                    product.collection,
+                    product.reference,
+                    product.description,
+                    product.caseMaterial,
+                    product.dialColor,
+                    product.movement,
+                    product.waterResistance
+                ].join(" ")).includes(normalizedQuery))
+                .slice(0, 5);
+            const pageMatches = searchablePages
+                .filter((page) => normalizeSearchText(`${page.title} ${page.category} ${page.keywords}`).includes(normalizedQuery))
+                .slice(0, 5);
+            const articleMatches = searchableArticles
+                .filter((article) => normalizeSearchText(`${article.title} ${article.category} ${article.keywords}`).includes(normalizedQuery))
+                .slice(0, 5);
+
+            if (productMatches.length + pageMatches.length + articleMatches.length === 0) {
+                const emptyMessage = document.createElement("p");
+                emptyMessage.className = "text-secondary mb-0";
+                emptyMessage.textContent = "No results found. Try another product, page, feature, or article.";
+                searchResults.appendChild(emptyMessage);
+                return;
+            }
+
+            function addResultSection(title, matches, createResult) {
+                if (matches.length === 0) return;
+                const section = document.createElement("section");
+                section.className = "tew-search-section";
+                const heading = document.createElement("h3");
+                heading.className = "small text-uppercase text-brand-green mb-1";
+                heading.textContent = title;
+                section.appendChild(heading);
+                matches.forEach((match) => section.appendChild(createResult(match)));
+                searchResults.appendChild(section);
+            }
+
+            function createTextResult({ title, category, href }) {
+                const resultLink = document.createElement("a");
+                resultLink.className = "tew-search-result";
+                resultLink.href = href;
+
+                const details = document.createElement("span");
+                details.className = "d-flex flex-column";
+                const resultTitle = document.createElement("strong");
+                resultTitle.className = "text-white";
+                resultTitle.textContent = title;
+                const resultCategory = document.createElement("span");
+                resultCategory.className = "small text-secondary";
+                resultCategory.textContent = category;
+                details.append(resultTitle, resultCategory);
+                resultLink.appendChild(details);
+                return resultLink;
+            }
+
+            addResultSection("Products", productMatches, ([productId, product]) => {
+                const result = createTextResult({
+                    title: product.title,
+                    category: `${product.collection.replace(" COLLECTION", "")} · Ref. ${product.reference} · ${product.price}`,
+                    href: `detailed%20product.html?id=${encodeURIComponent(productId)}`
+                });
+                const image = document.createElement("img");
+                image.src = product.mainImage;
+                image.alt = "";
+                image.loading = "lazy";
+                result.prepend(image);
+                return result;
+            });
+
+            addResultSection("Pages and features", pageMatches, createTextResult);
+            addResultSection("Blog articles", articleMatches, (article) => createTextResult({
+                title: article.title,
+                category: article.category,
+                href: `post-watches.html?id=${encodeURIComponent(article.id)}`
+            }));
+        }
+
+        async function openSearch() {
+            searchOverlay.hidden = false;
+            document.body.classList.add("tew-search-open");
+            searchInput.value = "";
+            renderSearchResults({}, "");
+            searchInput.focus();
+
+            try {
+                await loadProductData();
+            } catch (error) {
+                const message = document.createElement("p");
+                message.className = "text-danger mb-0";
+                message.textContent = "Search is unavailable right now. Please try again.";
+                searchResults.replaceChildren(message);
+                console.error("Unable to initialize product search.", error);
+            }
+        }
+
+        function closeSearch() {
+            searchOverlay.hidden = true;
+            document.body.classList.remove("tew-search-open");
+        }
+
+        searchButtons.forEach((button) => {
+            button.type = "button";
+            button.setAttribute("aria-haspopup", "dialog");
+            button.setAttribute("aria-expanded", "false");
+            button.addEventListener("click", () => {
+                button.setAttribute("aria-expanded", "true");
+                openSearch();
+            });
+        });
+
+        searchInput.addEventListener("input", async () => {
+            try {
+                const products = await loadProductData();
+                renderSearchResults(products, searchInput.value.trim());
+            } catch (error) {
+                const message = document.createElement("p");
+                message.className = "text-danger mb-0";
+                message.textContent = "Search is unavailable right now. Please try again.";
+                searchResults.replaceChildren(message);
+                console.error("Unable to search products.", error);
+            }
+        });
+
+        searchOverlay.addEventListener("click", (event) => {
+            if (event.target === searchOverlay || event.target.closest("[data-search-close]")) {
+                closeSearch();
+                searchButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !searchOverlay.hidden) {
+                closeSearch();
+                searchButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+            }
+        });
+    }
 });

@@ -409,6 +409,101 @@ footer .serif-font {
     height: 100%;
 }
 
+.product-card-actions-host {
+    display: flex;
+    flex-direction: column;
+}
+
+.tew-search-open {
+    overflow: hidden;
+}
+
+.tew-search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1080;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: min(12vh, 6rem) 1rem 1rem;
+    background: rgba(0, 0, 0, 0.78);
+}
+
+.tew-search-overlay[hidden] {
+    display: none;
+}
+
+.tew-search-dialog {
+    width: min(100%, 38rem);
+    max-height: 78vh;
+    overflow-y: auto;
+    padding: 1.25rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--card-brand);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.tew-search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tew-search-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.tew-search-result {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem;
+    border-radius: 0.35rem;
+    text-decoration: none;
+}
+
+.tew-search-result:hover,
+.tew-search-result:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tew-search-result img {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex: 0 0 auto;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    background: #101215;
+}
+
+.product-card-actions-host > a > .common-reference-text,
+.product-card-actions-host > a > .text-brand-green {
+    display: block;
+}
+
+.product-card-actions {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.product-card-feedback {
+    display: block;
+    min-height: 1.25rem;
+    margin-bottom: 0.35rem;
+}
+
+.product-card-action-button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.5rem 0.35rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+}
+
 .product-img-wrapper {
     width: 100%;
     height: 176px;

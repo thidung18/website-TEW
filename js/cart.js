@@ -14,6 +14,7 @@ function readCart() {
         || typeof item.id !== "string"
         || !Number.isSafeInteger(item.quantity)
         || item.quantity <= 0
+        || (item.selected !== undefined && typeof item.selected !== "boolean")
         || typeof productsData === "undefined"
         || !Object.hasOwn(productsData, item.id)
     );
@@ -44,42 +45,59 @@ function formatCartPrice(price) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const addToCartButtons = document.querySelectorAll("[data-add-to-cart]");
     const addFeedback = document.getElementById("cart-add-feedback");
 
-    addToCartButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const productId = new URLSearchParams(window.location.search).get("id") || "1";
-            const product = typeof productsData !== "undefined" ? productsData[productId] : null;
+    function showAddFeedback(button, message) {
+        const cardFeedback = button.closest(".product-card-actions")?.querySelector("[data-product-feedback]");
+        const feedback = addFeedback || cardFeedback;
+        if (feedback) feedback.textContent = message;
+    }
 
-            if (!product) {
-                if (addFeedback) addFeedback.textContent = "This product could not be added to your cart.";
-                return;
-            }
+    document.addEventListener("click", (event) => {
+        if (!(event.target instanceof Element)) return;
+        const button = event.target.closest("[data-add-to-cart]");
+        if (!button) return;
 
-            let cart;
+        const productId = button.dataset.productId
+            || new URLSearchParams(window.location.search).get("id")
+            || "1";
+        const product = typeof productsData !== "undefined" ? productsData[productId] : null;
+
+        if (!product) {
+            showAddFeedback(button, "This product could not be added to your cart.");
+            return;
+        }
+
+        if (button.hasAttribute("data-buy-now")) {
             try {
-                cart = readCart();
-                const cartItem = cart.find((item) => item.id === productId);
-                if (cartItem) {
-                    cartItem.quantity += 1;
-                } else {
-                    cart.push({ id: productId, quantity: 1 });
-                }
-                saveCart(cart);
+                sessionStorage.setItem("tew-checkout-items", JSON.stringify([{ id: productId, quantity: 1 }]));
             } catch (error) {
-                if (addFeedback) addFeedback.textContent = "Unable to save your cart. Please try again.";
-                console.error("Unable to update the shopping cart.", error);
+                showAddFeedback(button, "Unable to start checkout. Please try again.");
+                console.error("Unable to prepare checkout.", error);
                 return;
             }
 
-            if (button.hasAttribute("data-buy-now")) {
-                window.location.href = "cart.html";
-                return;
-            }
+            window.location.href = "pay.html";
+            return;
+        }
 
-            if (addFeedback) addFeedback.textContent = `${product.title} added to your cart.`;
-        });
+        let cart;
+        try {
+            cart = readCart();
+            const cartItem = cart.find((item) => item.id === productId);
+            if (cartItem) {
+                cartItem.quantity += 1;
+            } else {
+                cart.push({ id: productId, quantity: 1, selected: true });
+            }
+            saveCart(cart);
+        } catch (error) {
+            showAddFeedback(button, "Unable to save your cart. Please try again.");
+            console.error("Unable to update the shopping cart.", error);
+            return;
+        }
+
+        showAddFeedback(button, `${product.title} added to your cart.`);
     });
 
     const cartItems = document.getElementById("cart-items");
@@ -117,6 +135,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const productInfo = document.createElement("div");
         productInfo.className = "d-flex align-items-center gap-3 w-100 flex-sm-grow-1";
 
+        const selection = document.createElement("input");
+        selection.type = "checkbox";
+        selection.className = "form-check-input m-0";
+        selection.checked = item.selected !== false;
+        selection.dataset.cartSelection = item.id;
+        selection.setAttribute("aria-label", `Select ${product.title} for checkout`);
+
         const imageFrame = document.createElement("div");
         imageFrame.className = "bg-dark rounded p-2 d-flex align-items-center justify-content-center";
         imageFrame.style.cssText = "width: 100px; height: 100px; flex-shrink: 0;";
@@ -142,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mobilePrice.className = "fw-semibold text-white d-sm-none mt-2 d-block";
         mobilePrice.textContent = lineTotal;
         details.append(brand, title, reference, mobilePrice);
-        productInfo.append(imageFrame, details);
+        productInfo.append(selection, imageFrame, details);
 
         const controls = document.createElement("div");
         controls.className = "cart-item-controls d-flex align-items-center justify-content-end w-100 w-sm-auto flex-sm-grow-1 gap-3";
@@ -198,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!product) return;
             const renderedItem = createCartItem(item);
             rows.push(renderedItem.row);
-            subtotal += renderedItem.lineTotal;
+            if (item.selected !== false) subtotal += renderedItem.lineTotal;
         });
 
         cartItems.replaceChildren(...rows);
@@ -246,7 +271,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     cartItems.addEventListener("change", (event) => {
-        if (!(event.target instanceof HTMLInputElement) || !event.target.matches("[data-cart-quantity]")) return;
+        if (!(event.target instanceof HTMLInputElement)) return;
+
+        if (event.target.matches("[data-cart-selection]")) {
+            const item = cart.find((cartItem) => cartItem.id === event.target.dataset.cartSelection);
+            if (!item) return;
+
+            item.selected = event.target.checked;
+            saveCart(cart);
+            renderCart(cart);
+            return;
+        }
+
+        if (!event.target.matches("[data-cart-quantity]")) return;
         const item = cart.find((cartItem) => cartItem.id === event.target.dataset.cartQuantity);
         if (!item) return;
 
@@ -255,4 +292,28 @@ document.addEventListener("DOMContentLoaded", () => {
         saveCart(cart);
         renderCart(cart);
     });
+
+    const checkoutButton = document.querySelector("[data-cart-checkout]");
+    if (checkoutButton) {
+        checkoutButton.addEventListener("click", () => {
+            const selectedItems = cart
+                .filter((item) => item.selected !== false)
+                .map(({ id, quantity }) => ({ id, quantity }));
+
+            if (selectedItems.length === 0) {
+                showCartError("Select at least one product to continue to checkout.");
+                return;
+            }
+
+            try {
+                sessionStorage.setItem("tew-checkout-items", JSON.stringify(selectedItems));
+            } catch (error) {
+                showCartError("Unable to start checkout. Please try again.");
+                console.error("Unable to prepare checkout.", error);
+                return;
+            }
+
+            window.location.href = "pay.html";
+        });
+    }
 });

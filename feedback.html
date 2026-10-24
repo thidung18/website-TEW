@@ -104,7 +104,7 @@
                 </div>
 
                 <!-- Feedback Form -->
-                <form action="#" method="POST">
+                <form action="#" method="POST" id="feedbackForm">
                     <!-- Rating Stars -->
                     <fieldset class="border-0 p-0 m-0 mb-4">
                         <legend class="visually-hidden">Rate your experience from 1 to 5 stars</legend>
@@ -145,6 +145,7 @@
                         <button type="submit" class="btn-emerald px-5 py-2">Submit</button>
                     </div>
                 </form>
+                <p id="feedback-submit-error" class="text-danger small mt-3 d-none" role="alert"></p>
 
             </div>
         </div>
@@ -266,7 +267,7 @@
                     <li><a href="blog.html" class="text-white text-opacity-75 text-decoration-none">Blog</a></li>
                     <li><a href="contact.html" class="text-white text-opacity-75 text-decoration-none">Contact</a></li>
                     <li><a href="cart.html" class="text-white text-opacity-75 text-decoration-none">Cart</a></li>
-                    <li><a href="sign in.html" class="text-white text-opacity-75 text-decoration-none">Log in</a></li>
+                    <li><a href="sign in.html" class="text-white text-opacity-75 text-decoration-none">Sign in</a></li>
                     <li><a href="feedback.html" class="text-white text-opacity-75 text-decoration-none">Feedback</a></li>
                     <li><a href="chatbot.html" class="text-white text-opacity-75 text-decoration-none">Chatbot</a></li>
                 </ul>
@@ -325,69 +326,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- File JavaScript Dùng Chung Cho Tất Cả Các Trang -->
     <script src="js/common.js"></script>
-    <!-- SCRIPT XỬ LÝ LƯU VÀ HIỂN THỊ FEEDBACK -->
-    <script>
-        const feedbackForm = document.getElementById('feedbackForm');
-        const dynamicFeedbackContainer = document.getElementById('dynamicFeedbackContainer');
-
-        feedbackForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // 1. Lấy dữ liệu từ form
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const problem = document.getElementById('problem').value;
-            const selectedRating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : 5;
-            const dateStr = new Date().toLocaleDateString('vi-VN');
-
-            // 2. Tạo object chứa thông tin feedback
-            const newFeedback = {
-                name: name,
-                email: email,
-                problem: problem,
-                rating: selectedRating,
-                date: dateStr
-            };
-
-            // 3. Lưu vào localStorage để trang tổng hợp có thể đọc được
-            let allFeedbacks = JSON.parse(localStorage.getItem('tew_feedbacks')) || [];
-            allFeedbacks.unshift(newFeedback); // Đẩy feedback mới lên đầu mảng
-            localStorage.setItem('tew_feedbacks', JSON.stringify(allFeedbacks));
-
-            // 4. Hiển thị ngay lập tức xuống dưới form (giống code cũ)
-            let starsHtml = '';
-            for (let i = 1; i <= 5; i++) {
-                if (i <= selectedRating) {
-                    starsHtml += '<i class="fa-solid fa-star"></i>';
-                } else {
-                    starsHtml += '<i class="fa-regular fa-star"></i>';
-                }
-            }
-
-            const feedbackCard = document.createElement('div');
-            feedbackCard.className = 'bg-brand-card border border-secondary border-opacity-25 rounded-3 p-4 mb-3';
-            feedbackCard.innerHTML = `
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                    <div class="d-flex align-items-center gap-1 text-warning">
-                        ${starsHtml}
-                    </div>
-                    <span class="small text-secondary">${dateStr}</span>
-                </div>
-                <p class="text-white mb-3">“${problem}”</p>
-                <div class="border-top border-secondary border-opacity-25 pt-3 d-flex justify-content-between align-items-center">
-                    <div>
-                        <h5 class="text-white mb-1 fs-6">${name}</h5>
-                        <span class="small text-secondary">${email}</span>
-                    </div>
-                    <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">New Feedback</span>
-                </div>
-            `;
-            dynamicFeedbackContainer.prepend(feedbackCard);
-
-            // 5. Reset form
-            feedbackForm.reset();
-            alert('Cảm ơn bạn đã gửi feedback! Phản hồi của bạn đã được ghi nhận.');
-        });
-    </script>
+    <script src="js/feedback.js"></script>
 </body>
 </html>
