@@ -649,7 +649,7 @@ const productsData = {
     oldPrice: "",
     description: "The Patek Philippe Nautilus Flyback Chronograph 5980R-001 in 18K rose gold seamlessly combines sporty elegance with supreme mechanical complexity. Featuring a black-brown sunburst dial with horizontal embossed pattern, luminescent gold applied hour markers, and a date window at 3 o'clock. The monocounter subdial at 6 o'clock displays both 60-minute and 12-hour chronograph elapsed time. Fitted with a dark brown alligator strap and powered by the self-winding Caliber CH 28-520 C, visible through the sapphire crystal case back.",
     mainImage: "img/phi1.png",
-    thumbnails: ["img/phi1.png", "img/anhphu/ph1.3.jfif", "img/anhphu/ph1.4.jpg"],
+    thumbnails: ["img/phi1.png", "img/anhphu/ph1.3.jfif", "img/anhphu1/ph1.4.jpg"],
     reference: "5980R-001",
     betweenLugs: "21 mm",
     caseDiameter: "40.5 mm",
@@ -659,7 +659,7 @@ const productsData = {
     waterResistance: "12 bar (120 metres / 390 feet)",
     movement: "Self-winding mechanical (Caliber CH 28-520 C)",
     featureImage: "img/anhphu/ph1.1.jfif",
-    galleryImages: ["img/anhphu/ph1.1.jfif", "img/anhphu/ph1.2.jpg", "img/anhphu/ph1.4.jpg"]
+    galleryImages: ["img/anhphu/ph1.1.jfif", "img/anhphu1/ph1.2.jpg", "img/anhphu1/ph1.4.jpg"]
 },
 34: {
     collection: "PATEK PHILIPPE COLLECTION",
@@ -698,8 +698,8 @@ const productsData = {
     crystal: "Sapphire crystal front and case back",
     waterResistance: "3 bar (30 metres / 100 feet)",
     movement: "Self-winding mechanical (Caliber 240 HU)",
-    featureImage: "img/anhphu/ph3.3.jfif",
-    galleryImages: ["img/anhphu/ph3.2.jfif", "img/anhphu/ph3.4.jfif", "img/anhphu/ph3.3.jfif"]
+    featureImage: "img/anhphu1/ph3.3.jfif",
+    galleryImages: ["img/anhphu/ph3.2.jfif", "img/anhphu/ph3.4.jfif", "img/anhphu1/ph3.3.jfif"]
 },
 36: {
     collection: "PATEK PHILIPPE COLLECTION",
@@ -718,8 +718,8 @@ const productsData = {
     crystal: "Sapphire crystal front and case back",
     waterResistance: "3 bar (30 metres / 100 feet)",
     movement: "Self-winding mechanical (Caliber 240 Q)",
-    featureImage: "img/anhphu/ph4.3.jfif",
-    galleryImages: ["img/anhphu/ph4.1.jfif", "img/anhphu/ph4.3.jfif", "img/anhphu/ph4.4.jfif"]
+    featureImage: "img/anhphu1/ph4.3.jfif",
+    galleryImages: ["img/anhphu/ph4.1.jfif", "img/anhphu1/ph4.3.jfif", "img/anhphu/ph4.4.jfif"]
 },
 37: {
     collection: "PATEK PHILIPPE COLLECTION",
@@ -729,7 +729,7 @@ const productsData = {
     oldPrice: "",
     description: "The Patek Philippe Grand Complications 5327R-001 in 18K rose gold showcases supreme high-watchmaking elegance. Featuring a sunburst brown dial with applied rose gold hour markers and three subdials for the perpetual calendar indications: day of the week with 24-hour display, month with leap-year cycle, and date with an integrated moon phase display at 6 o'clock. Complete with a chestnut brown alligator strap and powered by the ultra-thin self-winding Caliber 240 Q, visible through an interchangeable sapphire crystal case back.",
     mainImage: "img/ph5.png",
-    thumbnails: ["img/ph5.png", "img/anhphu/ph5.2.jpg", "img/anhphu/ph5.3.jpg"],
+    thumbnails: ["img/ph5.png", "img/anhphu1/ph5.2.jpg", "img/anhphu/ph5.3.jpg"],
     reference: "5327R-001",
     betweenLugs: "21 mm",
     caseDiameter: "39 mm",
@@ -738,8 +738,8 @@ const productsData = {
     crystal: "Sapphire crystal front and case back",
     waterResistance: "3 bar (30 metres / 100 feet)",
     movement: "Self-winding mechanical (Caliber 240 Q)",
-    featureImage: "img/anhphu/ph5.2.jpg",
-    galleryImages: ["img/anhphu/ph5.4.jfif", "img/anhphu/ph5.2.jpg", "img/anhphu/ph5.3.jpg"]
+    featureImage: "img/anhphu1/ph5.2.jpg",
+    galleryImages: ["img/anhphu1/ph5.4.jfif", "img/anhphu1/ph5.2.jpg", "img/anhphu/ph5.3.jpg"]
 },
 38: {
     collection: "PATEK PHILIPPE COLLECTION",
@@ -769,7 +769,7 @@ const productsData = {
     oldPrice: "",
     description: "The Patek Philippe Nautilus Automatic 7118/1R-001 in 18K rose gold redefines feminine sporty elegance. Featuring a silvery opaline dial with delicate wave pattern embossing, gold applied hour markers and numerals with luminescent coating, and a date window at 3 o'clock. Complemented by a fully integrated 18K rose gold bracelet with fold-over clasp. Driven by the self-winding Caliber 324 S C, visible through the sapphire crystal case back.",
     mainImage: "img/ph7.png",
-    thumbnails: ["img/ph7.png", "img/anhphu/ph7.2.jfif", "img/anhphu/ph7.4.jfif"],
+    thumbnails: ["img/ph7.png", "img/anhphu1/ph7.2.jfif", "img/anhphu1/ph7.4.jfif"],
     reference: "7118/1R-001",
     betweenLugs: "19 mm",
     caseDiameter: "35.2 mm",
@@ -778,8 +778,8 @@ const productsData = {
     crystal: "Sapphire crystal front and case back",
     waterResistance: "6 bar (60 metres / 200 feet)",
     movement: "Self-winding mechanical (Caliber 324 S C)",
-    featureImage: "img/anhphu/ph7.2.jfif",
-    galleryImages: ["img/anhphu/ph7.1.jfif", "img/anhphu/ph7.4.jfif", "img/anhphu/ph7.3.jpg"]
+    featureImage: "img/anhphu1/ph7.2.jfif",
+    galleryImages: ["img/anhphu1/ph7.1.jfif", "img/anhphu1/ph7.4.jfif", "img/anhphu/ph7.3.jpg"]
 },
 40: {
     collection: "PATEK PHILIPPE COLLECTION",
@@ -799,7 +799,7 @@ const productsData = {
     waterResistance: "12 bar (120 metres / 390 feet)",
     movement: "Self-winding mechanical (Caliber 26-330 S C)",
     featureImage: "img/anhphu/ph8.4.jfif",
-    galleryImages: ["img/anhphu/ph8.3.jpg", "img/anhphu/ph8.2.jpeg", "img/anhphu/ph8.4.jfif"]
+    galleryImages: ["img/anhphu/ph8.3.jpg", "img/anhphu1/ph8.2.jpeg", "img/anhphu/ph8.4.jfif"]
 },
 41: {
     collection: "OMEGA COLLECTION",
@@ -829,7 +829,7 @@ const productsData = {
     oldPrice: "",
     description: "The Omega De Ville Trésor Master Co-Axial in 18K Sedna™ gold features a pave diamond-set bezel and a white mother-of-pearl dial with slender 18K Sedna™ gold hands and hour markers. The date aperture is positioned at 6 o'clock. Presented on an elegant white alligator leather strap and powered by the manual-winding Omega Calibre 8511, certified Master Chronometer for anti-magnetic resistance up to 15,000 gauss.",
     mainImage: "img/om2.png",
-    thumbnails: ["img/om2.png", "img/anhphu/om2.2.jpg", "img/anhphu/om2.3.jfif"],
+    thumbnails: ["img/om2.png", "img/anhphu/om2.2.jpg", "img/anhphu1/om2.3.jfif"],
     reference: "432.53.40.21.05.001",
     betweenLugs: "20 mm",
     caseDiameter: "40 mm",
@@ -838,8 +838,8 @@ const productsData = {
     crystal: "Scratch-resistant sapphire crystal with anti-reflective treatment on both sides",
     waterResistance: "3 bar (30 metres / 100 feet)",
     movement: "Manual-winding mechanical (Calibre 8511)",
-    featureImage: "img/anhphu/om2.1.jfif",
-    galleryImages: ["img/om2.png", "img/anhphu/om2.3.jfif", "img/anhphu/om2.2.jpg"]
+    featureImage: "img/anhphu1/om2.1.jfif",
+    galleryImages: ["img/om2.png", "img/anhphu1/om2.3.jfif", "img/anhphu/om2.2.jpg"]
 },
 43: {
     collection: "OMEGA COLLECTION",
@@ -849,7 +849,7 @@ const productsData = {
     oldPrice: "",
     description: "The Omega Speedmaster 'First Omega in Space' Numbered Edition honors astronaut Walter Schirra's historic 1962 spaceflight. Featuring a black dial with 30-minute and 12-hour recorders, running small seconds subdial, and classic Alpha hands. The black aluminium bezel ring features a tachymeter scale. Fitted with a brown leather strap with beige stitching and powered by the legendary manual-winding Calibre 1861, protected by an engraved case back with the iconic Speedmaster Seahorse emblem.",
     mainImage: "img/om3.png",
-    thumbnails: ["img/om3.png", "img/anhphu/om3.2.jfif", "img/anhphu/om3.3.jfif"],
+    thumbnails: ["img/om3.png", "img/anhphu1/om3.2.jfif", "img/anhphu1/om3.3.jfif"],
     reference: "311.32.40.30.01.011",
     betweenLugs: "19 mm",
     caseDiameter: "39.7 mm",
@@ -859,7 +859,7 @@ const productsData = {
     waterResistance: "5 bar (50 metres / 167 feet)",
     movement: "Manual-winding mechanical chronograph (Calibre 1861)",
     featureImage: "img/anhphu/om3.1.jpg",
-    galleryImages: ["img/anhphu/om3.2.jfif", "img/anhphu/om3.4.jpg", "img/anhphu/om3.3.jfif"]
+    galleryImages: ["img/anhphu1/om3.2.jfif", "img/anhphu/om3.4.jpg", "img/anhphu1/om3.3.jfif"]
 },
 44: {
     collection: "OMEGA COLLECTION",
@@ -869,7 +869,7 @@ const productsData = {
     oldPrice: "",
     description: "The Omega Seamaster Planet Ocean 600M Co-Axial Master Chronometer Chronograph features a black polished ceramic [ZrO2] dial with two sub-dials and a date window at 6 o'clock. The unidirectional rotating black ceramic bezel features an orange rubber scale for the first 15 minutes. Built with a helium escape valve and water resistance to 600 metres. Driven by the self-winding Omega Calibre 9900, visible through the transparent case back and Master Chronometer certified.",
     mainImage: "img/om4.png",
-    thumbnails: ["img/om4.png", "img/anhphu/om4.1.jpg", "img/anhphu/om4.2.jpg"],
+    thumbnails: ["img/om4.png", "img/anhphu/om4.1.jpg", "img/anhphu1/om4.2.jpg"],
     reference: "215.30.45.51.01.002",
     betweenLugs: "22 mm",
     caseDiameter: "45.5 mm",
@@ -878,8 +878,8 @@ const productsData = {
     crystal: "Domed scratch-resistant sapphire crystal with anti-reflective treatment on both sides",
     waterResistance: "60 bar (600 metres / 2000 feet)",
     movement: "Self-winding mechanical chronograph (Calibre 9900)",
-    featureImage: "img/anhphu/om4.2.jpg",
-    galleryImages: ["img/anhphu/om4.3.jfif", "img/anhphu/om4.1.jpg", "img/anhphu/om4.3.jfif"]
+    featureImage: "img/anhphu1/om4.2.jpg",
+    galleryImages: ["img/anhphu1/om4.3.jfif", "img/anhphu/om4.1.jpg", "img/anhphu1/om4.3.jfif"]
 },
 45: {
     collection: "OMEGA COLLECTION",
@@ -889,7 +889,7 @@ const productsData = {
     oldPrice: "",
     description: "The Omega De Ville Co-Axial Chronograph in stainless steel combines sophisticated elegance with advanced chronograph performance. Featuring a striking black dial with applied Roman numeral hour markers, two sub-dials at 3 and 9 o'clock for 60-minute/12-hour chronograph recording and running seconds, plus a date window at 6 o'clock. Complemented by an intricate stainless steel bracelet and powered by the self-winding Calibre 9300 with Co-Axial escapement and silicon balance spring.",
     mainImage: "img/om5.png",
-    thumbnails: ["img/om5.png", "img/anhphu/om5.2.jfif", "img/anhphu/om5.3.jfif"],
+    thumbnails: ["img/om5.png", "img/anhphu1/om5.2.jfif", "img/anhphu1/om5.3.jfif"],
     reference: "431.10.42.51.01.001",
     betweenLugs: "20 mm",
     caseDiameter: "42 mm",
@@ -898,8 +898,8 @@ const productsData = {
     crystal: "Domed scratch-resistant sapphire crystal with anti-reflective treatment on both sides",
     waterResistance: "10 bar (100 metres / 330 feet)",
     movement: "Self-winding mechanical chronograph (Calibre 9300)",
-    featureImage: "img/anhphu/om5.2.jfif",
-    galleryImages: ["img/anhphu/om5.1.jpg", "img/anhphu/om5.2.jfif", "img/anhphu/om5.3.jfif"]
+    featureImage: "img/anhphu1/om5.2.jfif",
+    galleryImages: ["img/anhphu1/om5.1.jpg", "img/anhphu1/om5.2.jfif", "img/anhphu1/om5.3.jfif"]
 },
 46: {
     collection: "OMEGA COLLECTION",
@@ -929,7 +929,7 @@ const productsData = {
     oldPrice: "",
     description: "The Omega De Ville Prestige Co-Axial Chronometer in 18K yellow gold is distinguished by its timeless, elegant design. Featuring a two-zone sun-brushed blue dial with polished 18K yellow gold-plated Roman numeral hour markers and cabochons, plus a date aperture at 3 o'clock. Complemented by a matching 18K yellow gold bracelet and driven by the self-winding Calibre 2500 with Co-Axial escapement.",
     mainImage: "img/om7.png",
-    thumbnails: ["img/om7.png", "img/anhphu/om8.2.jfif", "img/anhphu/om8.1.jfif"],
+    thumbnails: ["img/om7.png", "img/anhphu1/om8.2.jfif", "img/anhphu/om8.1.jfif"],
     reference: "424.50.40.20.03.001",
     betweenLugs: "20 mm",
     caseDiameter: "39.5 mm",
@@ -938,7 +938,7 @@ const productsData = {
     crystal: "Domed scratch-resistant sapphire crystal with anti-reflective treatment inside",
     waterResistance: "3 bar (30 metres / 100 feet)",
     movement: "Self-winding mechanical (Calibre 2500)",
-    featureImage: "img/anhphu/om8.2.jfif",
+    featureImage: "img/anhphu1/om8.2.jfif",
     galleryImages: ["img/om7.png", "img/anhphu/om8.1.jfif", "img/anhphu/om8.1.jfif"]
 },
 48: {
@@ -949,7 +949,7 @@ const productsData = {
     oldPrice: "",
     description: "The Omega De Ville Co-Axial Chronograph in stainless steel combines sophisticated elegance with advanced chronograph performance. Featuring a striking black dial with applied Roman numeral hour markers, two sub-dials at 3 and 9 o'clock for 60-minute/12-hour chronograph recording and running seconds, plus a date window at 6 o'clock. Complemented by an intricate stainless steel bracelet and powered by the self-winding Calibre 9300 with Co-Axial escapement and silicon balance spring.",
     mainImage: "img/om5.png",
-    thumbnails: ["img/om5.png", "img/anhphu/om5.2.jfif", "img/anhphu/om5.3.jfif"],
+    thumbnails: ["img/om5.png", "img/anhphu1/om5.2.jfif", "img/anhphu1/om5.3.jfif"],
     reference: "431.10.42.51.01.001",
     betweenLugs: "20 mm",
     caseDiameter: "42 mm",
@@ -958,8 +958,8 @@ const productsData = {
     crystal: "Domed scratch-resistant sapphire crystal with anti-reflective treatment on both sides",
     waterResistance: "10 bar (100 metres / 330 feet)",
     movement: "Self-winding mechanical chronograph (Calibre 9300)",
-    featureImage: "img/anhphu/om5.2.jfif",
-    galleryImages: ["img/anhphu/om5.1.jpg", "img/anhphu/om5.2.jfif", "img/anhphu/om5.3.jfif"]
+    featureImage: "img/anhphu1/om5.2.jfif",
+    galleryImages: ["img/anhphu1/om5.1.jpg", "img/anhphu1/om5.2.jfif", "img/anhphu1/om5.3.jfif"]
 },
 
 
